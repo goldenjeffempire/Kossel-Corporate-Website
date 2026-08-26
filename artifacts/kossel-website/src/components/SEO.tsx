@@ -184,7 +184,7 @@ export function SEO({
   title,
   description,
   path,
-  imageAlt = "Kossel Group LTD. industrial engineering and oilfield operations",
+  imageAlt = "Kossel LTD. industrial engineering and oilfield operations",
   indexable = true,
 }: SEOProps) {
   useEffect(() => {

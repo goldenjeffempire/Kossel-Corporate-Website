@@ -23,10 +23,10 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-background">
       <SEO
-        title="Industrial Engineering & MRO Services | Kossel Group LTD."
-        description="Kossel Group LTD. provides industrial MRO, engineering, procurement, construction, pipeline, instrumentation and logistics support across Nigeria and beyond."
+        title="Industrial Engineering & MRO Services | Kossel LTD."
+        description="Kossel LTD. provides industrial MRO, engineering, procurement, construction, pipeline, instrumentation and logistics support across Nigeria and beyond."
         path="/"
-        imageAlt="Kossel Group LTD. pipeline installation and industrial engineering operations"
+        imageAlt="Kossel LTD. pipeline installation and industrial engineering operations"
       />
       {/* 1. Hero Section (Visual Transformation) */}
       <section className="relative h-[90vh] min-h-[700px] flex items-center justify-center overflow-hidden border-b-8 border-accent">
@@ -55,7 +55,7 @@ export default function Home() {
               Demanding Operations
             </h1>
             <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed font-light">
-              Kossel Group LTD. delivers robust industrial MRO, procurement, and heavy engineering services to leading multinational facilities.
+              Kossel LTD. delivers robust industrial MRO, procurement, and heavy engineering services to leading multinational facilities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/services">

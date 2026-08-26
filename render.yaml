@@ -1,4 +1,4 @@
-# Render Blueprint for the public Kossel Group LTD. website.
+# Render Blueprint for the public Kossel LTD. website.
 # A static site is served from Render's CDN and does not sleep, so no
 # always-on web-service instance is needed for this frontend.
 services:

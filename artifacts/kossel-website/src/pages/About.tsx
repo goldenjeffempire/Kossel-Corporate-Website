@@ -11,7 +11,7 @@ export default function About() {
     <div className="flex flex-col bg-white">
       <SEO
         title="About Kossel | Nigerian Oilfield Engineering Partner"
-        description="Learn about Kossel Group LTD., an indigenous Nigerian engineering and oilfield resources company serving industrial and energy operations across Africa."
+        description="Learn about Kossel LTD., an indigenous Nigerian engineering and oilfield resources company serving industrial and energy operations across Africa."
         path="/about"
         imageAlt="Kossel engineering team supporting industrial operations"
       />
