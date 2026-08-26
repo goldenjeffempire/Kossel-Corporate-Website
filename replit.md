@@ -4,7 +4,7 @@ A premium corporate website for Kossel Ltd., showcasing its engineering, industr
 
 ## Run & Operate
 
-- **artifacts/kossel-website: web** workflow — runs the website preview using the artifact-managed `pnpm --filter @workspace/kossel-website run dev` command
+- **Start Kossel website** workflow — runs the website preview with `PORT=25235 BASE_PATH=/ pnpm --filter @workspace/kossel-website run dev`
 - `pnpm run typecheck` — full typecheck across all packages
 - `PORT=25235 BASE_PATH=/ pnpm --filter @workspace/kossel-website run build` — production website build
 - The current marketing website is static and does not require any secrets or a database to run.
