@@ -1,9 +1,12 @@
 import { Settings, Truck, Anchor, Cog } from "lucide-react";
 import { SEO } from "@/components/SEO";
-import teamImg from "@assets/generated_images/kossel-african-engineering-team.jpg";
-import pipelineImg from "@assets/generated_images/kossel-african-pipeline-team.jpg";
-import instrumentationImg from "@assets/generated_images/kossel-african-instrumentation-engineer.jpg";
-import marineImg from "@assets/generated_images/kossel-african-marine-team.jpg";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { imageSources } from "@/lib/images";
+
+const teamImg = imageSources("kossel-african-engineering-team.jpg");
+const pipelineImg = imageSources("kossel-african-pipeline-team.jpg");
+const instrumentationImg = imageSources("kossel-african-instrumentation-engineer.jpg");
+const marineImg = imageSources("kossel-african-marine-team.jpg");
 
 export default function Services() {
   const servicesList = [
@@ -30,12 +33,14 @@ export default function Services() {
       {/* Header */}
       <section className="relative h-[60vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent overflow-hidden">
         <div className="absolute inset-0 bg-primary">
-          <img 
-            src={instrumentationImg}
-             alt="Kossel instrumentation engineer delivering industrial services"
-             width="1024"
-             height="1024"
-            loading="lazy"
+          <ResponsiveImage
+            sources={instrumentationImg}
+            alt="Kossel instrumentation engineer delivering industrial services"
+            width={1024}
+            height={1024}
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
             className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent" />
@@ -57,12 +62,13 @@ export default function Services() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
             <div className="relative h-[500px] bg-muted overflow-hidden border border-border shadow-xl">
-              <img 
-                src={teamImg} 
+              <ResponsiveImage
+                sources={teamImg}
                 alt="Kossel engineering design team preparing industrial project documentation"
-                width="1024"
-                height="1024"
+                width={1024}
+                height={1024}
                 loading="lazy"
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
@@ -98,7 +104,7 @@ export default function Services() {
       {/* Main Service Detailed: Procurement */}
       <section className="py-24 bg-primary text-white overflow-hidden relative border-b border-border">
         <div className="absolute right-0 top-0 w-1/2 h-full hidden lg:block opacity-20 mix-blend-luminosity">
-           <img src={marineImg} alt="Marine logistics operation supporting offshore supply chains" width="1024" height="1024" className="w-full h-full object-cover" />
+           <ResponsiveImage sources={marineImg} alt="Marine logistics operation supporting offshore supply chains" width={1024} height={1024} loading="lazy" sizes="50vw" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-primary" />
         </div>
         
@@ -152,12 +158,13 @@ export default function Services() {
           </div>
           
           <div className="relative min-h-[500px]">
-            <img 
-              src={pipelineImg} 
-               alt="Pipeline installation and heavy logistics support for energy projects"
-               width="1024"
-               height="1024"
+            <ResponsiveImage
+              sources={pipelineImg}
+              alt="Pipeline installation and heavy logistics support for energy projects"
+              width={1024}
+              height={1024}
               loading="lazy"
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="absolute inset-0 w-full h-full object-cover filter sepia-[0.3]"
             />
             <div className="absolute inset-0 bg-primary/20" />

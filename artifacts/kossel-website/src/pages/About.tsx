@@ -2,9 +2,11 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Crosshair } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { imageSources } from "@/lib/images";
 
-import teamImg from "@assets/generated_images/kossel-african-engineering-team.jpg";
-import engineeringImg from "@assets/generated_images/kossel-african-design-engineers.jpg";
+const teamImg = imageSources("kossel-african-engineering-team.jpg");
+const engineeringImg = imageSources("kossel-african-design-engineers.jpg");
 
 export default function About() {
   return (
@@ -18,12 +20,14 @@ export default function About() {
       {/* Image-Rich Header */}
       <section className="relative h-[60vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
-          <img 
-            src={teamImg}
-             alt="Kossel engineering team supporting industrial operations in Nigeria"
-             width="1024"
-             height="1024"
-            loading="lazy"
+          <ResponsiveImage
+            sources={teamImg}
+            alt="Kossel engineering team supporting industrial operations in Nigeria"
+            width={1024}
+            height={1024}
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent" />
@@ -64,12 +68,13 @@ export default function About() {
             
             <div className="lg:col-span-5">
               <div className="relative p-2 bg-white border border-border shadow-xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                <img 
-                  src={engineeringImg} 
-                   alt="Kossel engineering design capability for oilfield and industrial projects"
-                   width="1024"
-                   height="1024"
+                <ResponsiveImage
+                  sources={engineeringImg}
+                  alt="Kossel engineering design capability for oilfield and industrial projects"
+                  width={1024}
+                  height={1024}
                   loading="lazy"
+                  sizes="(min-width: 1024px) 42vw, 100vw"
                   className="w-full h-auto object-contain"
                 />
                 <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-accent z-[-1]" />
@@ -97,12 +102,13 @@ export default function About() {
 
           <div className="grid gap-5 lg:grid-cols-2">
             <article className="group relative min-h-[520px] overflow-hidden">
-              <img
-                src={teamImg}
+              <ResponsiveImage
+                sources={teamImg}
                 alt="Black African engineers collaborating at an industrial facility"
-                width="1024"
-                height="1024"
+                width={1024}
+                height={1024}
                 loading="lazy"
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/25 to-transparent" />
@@ -117,12 +123,13 @@ export default function About() {
             </article>
 
             <article className="group relative min-h-[520px] overflow-hidden">
-              <img
-                src={engineeringImg}
+              <ResponsiveImage
+                sources={engineeringImg}
                 alt="Black African engineers developing technical solutions"
-                width="1024"
-                height="1024"
+                width={1024}
+                height={1024}
                 loading="lazy"
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/25 to-transparent" />

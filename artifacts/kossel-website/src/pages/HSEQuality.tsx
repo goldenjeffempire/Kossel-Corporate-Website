@@ -1,6 +1,9 @@
 import { ShieldCheck, Target, HeartHandshake, CheckCircle2 } from "lucide-react";
 import { SEO } from "@/components/SEO";
-import hseImg from "@assets/generated_images/kossel-african-hse-team.jpg";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { imageSources } from "@/lib/images";
+
+const hseImg = imageSources("kossel-african-hse-team.jpg");
 
 export default function HSEQuality() {
   return (
@@ -14,12 +17,14 @@ export default function HSEQuality() {
       {/* Visual Header */}
       <section className="relative h-[55vh] min-h-[450px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
-          <img 
-            src={hseImg}
-             alt="Kossel HSE team reviewing safety and quality procedures"
-             width="1024"
-             height="1024"
-            loading="lazy"
+          <ResponsiveImage
+            sources={hseImg}
+            alt="Kossel HSE team reviewing safety and quality procedures"
+            width={1024}
+            height={1024}
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
             className="w-full h-full object-cover opacity-50 mix-blend-luminosity"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent" />
@@ -127,12 +132,13 @@ export default function HSEQuality() {
       {/* Immersive Culture Image Band */}
       <section className="relative py-32 bg-primary text-white text-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-             src={hseImg} 
-             alt="Kossel safety culture in industrial operations"
-             width="1024"
-             height="1024"
-            loading="lazy" 
+          <ResponsiveImage
+            sources={hseImg}
+            alt="Kossel safety culture in industrial operations"
+            width={1024}
+            height={1024}
+            loading="lazy"
+            sizes="100vw"
             className="w-full h-full object-cover opacity-20 mix-blend-luminosity transform scale-105"
           />
           <div className="absolute inset-0 bg-primary/70" />

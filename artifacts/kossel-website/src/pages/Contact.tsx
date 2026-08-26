@@ -15,8 +15,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { imageSources } from "@/lib/images";
 
-import teamImg from "@assets/generated_images/kossel-african-engineering-team.jpg";
+const teamImg = imageSources("kossel-african-engineering-team.jpg");
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -81,12 +83,14 @@ export default function Contact() {
       {/* Immersive Header */}
       <section className="relative h-[50vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
-          <img 
-            src={teamImg}
-             alt="Kossel engineering team ready to support industrial projects"
-             width="1024"
-             height="1024"
-            loading="lazy"
+          <ResponsiveImage
+            sources={teamImg}
+            alt="Kossel engineering team ready to support industrial projects"
+            width={1024}
+            height={1024}
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent" />

@@ -176,6 +176,13 @@ function renderRoute(templateHtml, route) {
     .replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi, "")
     .replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "");
 
+  if (route.path !== "/") {
+    html = html.replace(
+      /\s*<link\b(?=[^>]*\bdata-critical-hero=["']true["'])[^>]*>/gi,
+      "",
+    );
+  }
+
   const headTags = [
     `<title>${escapeHtml(route.title)}</title>`,
     `<meta name="description" content="${escapeHtml(route.description)}" />`,
@@ -215,7 +222,11 @@ function renderNotFound(templateHtml) {
       return match && seoMetaKeys.has(match[1]) ? "" : tag;
     })
     .replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi, "")
-    .replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "");
+    .replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(
+      /\s*<link\b(?=[^>]*\bdata-critical-hero=["']true["'])[^>]*>/gi,
+      "",
+    );
 
   const headTags = [
     "<title>Page Not Found | Kossel LTD.</title>",

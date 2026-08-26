@@ -2,13 +2,15 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Settings, Truck, ShieldCheck, Wrench } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { imageSources } from "@/lib/images";
 
-import teamImg from "@assets/generated_images/kossel-african-engineering-team.jpg";
-import pipelineImg from "@assets/generated_images/kossel-african-pipeline-team.jpg";
-import productsImg from "@assets/generated_images/kossel-industrial-products_2.jpg";
-import hseImg from "@assets/generated_images/kossel-african-hse-team.jpg";
-import instrumentationImg from "@assets/generated_images/kossel-african-instrumentation-engineer.jpg";
-import marineImg from "@assets/generated_images/kossel-african-marine-team.jpg";
+const teamImg = imageSources("kossel-african-engineering-team.jpg");
+const pipelineImg = imageSources("kossel-african-pipeline-team.jpg");
+const productsImg = imageSources("kossel-industrial-products_2.jpg");
+const hseImg = imageSources("kossel-african-hse-team.jpg");
+const instrumentationImg = imageSources("kossel-african-instrumentation-engineer.jpg");
+const marineImg = imageSources("kossel-african-marine-team.jpg");
 
 const galleryImages = [
   { src: teamImg, alt: "Kossel engineering team coordinating industrial work" },
@@ -31,13 +33,14 @@ export default function Home() {
       {/* 1. Hero Section (Visual Transformation) */}
       <section className="relative h-[90vh] min-h-[700px] flex items-center justify-center overflow-hidden border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
-          <img 
-            src={pipelineImg} 
-             alt="Kossel pipeline installation crew supporting an oilfield project"
-             width="1024"
-             height="1024"
+          <ResponsiveImage
+            sources={pipelineImg}
+            alt="Kossel pipeline installation crew supporting an oilfield project"
+            width={1024}
+            height={1024}
             loading="eager"
             fetchPriority="high"
+            sizes="100vw"
             className="h-full w-full scale-105 object-cover opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-primary/10" />
@@ -100,22 +103,24 @@ export default function Home() {
             {/* Right: Layered Image Composition */}
             <div className="lg:col-span-7 relative min-h-[600px]">
               <div className="absolute top-0 right-0 w-[80%] h-[80%] z-10 border-8 border-white shadow-2xl">
-                <img 
-                  src={teamImg} 
-                   alt="Kossel engineering team at work in an industrial facility"
-                   width="1024"
-                   height="1024"
+                <ResponsiveImage
+                  sources={teamImg}
+                  alt="Kossel engineering team at work in an industrial facility"
+                  width={1024}
+                  height={1024}
                   loading="lazy"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute bottom-0 left-0 w-[60%] h-[60%] z-20 border-8 border-white shadow-2xl transform -translate-y-12 translate-x-12">
-                <img 
-                  src={instrumentationImg} 
-                   alt="Kossel industrial instrumentation engineering capability"
-                   width="1024"
-                   height="1024"
+                <ResponsiveImage
+                  sources={instrumentationImg}
+                  alt="Kossel industrial instrumentation engineering capability"
+                  width={1024}
+                  height={1024}
                   loading="lazy"
+                  sizes="(min-width: 1024px) 40vw, 60vw"
                   className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
@@ -139,12 +144,13 @@ export default function Home() {
         <div className="flex gap-4 px-4 overflow-x-auto pb-8 snap-x snap-mandatory">
           {galleryImages.map(({ src, alt }, idx) => (
             <div key={idx} className="relative flex-none w-[80vw] md:w-[400px] h-[300px] snap-center group">
-              <img 
-                src={src} 
+              <ResponsiveImage
+                sources={src}
                 alt={alt}
-                width="1024"
-                height="1024"
+                width={1024}
+                height={1024}
                 loading="lazy"
+                sizes="(min-width: 768px) 400px, 80vw"
                 className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 border border-white/10"
               />
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent transition-colors duration-500" />
@@ -158,7 +164,7 @@ export default function Home() {
         {/* Block 1: Engineering & Design */}
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="relative h-[400px] md:h-auto">
-            <img src={teamImg} alt="Engineering design team developing industrial project solutions" width="1024" height="1024" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+            <ResponsiveImage sources={teamImg} alt="Engineering design team developing industrial project solutions" width={1024} height={1024} loading="lazy" sizes="(min-width: 768px) 50vw, 100vw" className="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div className="bg-muted p-12 md:p-24 flex flex-col justify-center border-l-4 border-accent">
             <Settings className="w-12 h-12 text-primary mb-6" />
@@ -181,14 +187,14 @@ export default function Home() {
             <Link href="/products"><Button className="self-start bg-accent text-primary hover:bg-white">View Products</Button></Link>
           </div>
           <div className="relative h-[400px] md:h-auto order-1 md:order-2">
-            <img src={productsImg} alt="Industrial MRO products sourced through Kossel procurement" width="1024" height="1024" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+            <ResponsiveImage sources={productsImg} alt="Industrial MRO products sourced through Kossel procurement" width={1024} height={1024} loading="lazy" sizes="(min-width: 768px) 50vw, 100vw" className="absolute inset-0 w-full h-full object-cover" />
           </div>
         </div>
 
         {/* Block 3: HSE & Quality */}
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="relative h-[400px] md:h-auto">
-            <img src={hseImg} alt="HSE inspection and safety management in industrial operations" width="1024" height="1024" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+            <ResponsiveImage sources={hseImg} alt="HSE inspection and safety management in industrial operations" width={1024} height={1024} loading="lazy" sizes="(min-width: 768px) 50vw, 100vw" className="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div className="bg-muted p-12 md:p-24 flex flex-col justify-center border-l-4 border-accent">
             <ShieldCheck className="w-12 h-12 text-primary mb-6" />
@@ -204,7 +210,7 @@ export default function Home() {
       {/* 5. Powerful CTA */}
       <section className="relative py-32 bg-primary text-white text-center border-t-8 border-accent overflow-hidden">
         <div className="absolute inset-0">
-          <img src={marineImg} alt="Marine logistics support for offshore and onshore operations" width="1024" height="1024" loading="lazy" className="w-full h-full object-cover opacity-20 mix-blend-luminosity" />
+          <ResponsiveImage sources={marineImg} alt="Marine logistics support for offshore and onshore operations" width={1024} height={1024} loading="lazy" sizes="100vw" className="w-full h-full object-cover opacity-20 mix-blend-luminosity" />
           <div className="absolute inset-0 bg-primary/80" />
         </div>
         <div className="container relative z-10 mx-auto px-4 max-w-3xl">

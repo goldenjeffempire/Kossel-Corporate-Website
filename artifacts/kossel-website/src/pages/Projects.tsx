@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { imageSources } from "@/lib/images";
 
-import pipelineImg from "@assets/generated_images/kossel-african-pipeline-team.jpg";
-import engineeringImg from "@assets/generated_images/kossel-african-design-engineers.jpg";
+const pipelineImg = imageSources("kossel-african-pipeline-team.jpg");
+const engineeringImg = imageSources("kossel-african-design-engineers.jpg");
 
 const projectsData = [
   {
@@ -70,12 +72,14 @@ export default function Projects() {
       {/* Immersive Header */}
       <section className="relative h-[50vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
-          <img 
-            src={pipelineImg}
-             alt="Kossel pipeline installation team delivering an energy project"
-             width="1024"
-             height="1024"
-            loading="lazy"
+          <ResponsiveImage
+            sources={pipelineImg}
+            alt="Kossel pipeline installation team delivering an energy project"
+            width={1024}
+            height={1024}
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity filter sepia-[0.2]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent" />
@@ -94,9 +98,9 @@ export default function Projects() {
       {/* Decorative Band */}
       <div className="h-48 w-full bg-muted overflow-hidden relative border-b border-border">
         <div className="absolute inset-0 flex items-center justify-around opacity-30 grayscale mix-blend-multiply">
-            <img src={engineeringImg} alt="Engineering design documentation for industrial project delivery" width="1024" height="1024" className="h-[200%] w-auto object-cover transform rotate-12" />
-            <img src={engineeringImg} alt="" aria-hidden="true" width="1024" height="1024" className="h-[200%] w-auto object-cover transform -rotate-12 hidden md:block" />
-            <img src={engineeringImg} alt="" aria-hidden="true" width="1024" height="1024" className="h-[200%] w-auto object-cover transform rotate-6 hidden lg:block" />
+            <ResponsiveImage sources={engineeringImg} alt="Engineering design documentation for industrial project delivery" width={1024} height={1024} loading="lazy" sizes="50vw" className="h-[200%] w-auto object-cover transform rotate-12" />
+            <ResponsiveImage sources={engineeringImg} alt="" aria-hidden="true" width={1024} height={1024} loading="lazy" sizes="50vw" className="h-[200%] w-auto object-cover transform -rotate-12 hidden md:block" />
+            <ResponsiveImage sources={engineeringImg} alt="" aria-hidden="true" width={1024} height={1024} loading="lazy" sizes="50vw" className="h-[200%] w-auto object-cover transform rotate-6 hidden lg:block" />
         </div>
       </div>
 
