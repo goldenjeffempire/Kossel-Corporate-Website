@@ -5,47 +5,73 @@ import { imageSources } from "@/lib/images";
 
 const productsImg = imageSources("kossel-industrial-products_2.jpg");
 const fittingsImg = imageSources("valves-fittings.jpg");
+const categoryImages = {
+  pipes: imageSources("product-category-pipes.jpg"),
+  buttWeldFittings: imageSources("product-category-butt-weld-fittings.jpg"),
+  forgedFittings: imageSources("product-category-forged-fittings.jpg"),
+  flanges: imageSources("product-category-flanges.jpg"),
+  valves: imageSources("product-category-valves.jpg"),
+  fastenersSealing: imageSources("product-category-fasteners-sealing.jpg"),
+  electronicComponents: imageSources("product-category-electronic-components.jpg"),
+  pumpsChemicals: imageSources("product-category-pumps-chemicals.jpg"),
+};
 
 export default function Products() {
   const productCategories = [
     {
       title: "Pipes",
       icon: Layers,
+      image: categoryImages.pipes,
+      imageAlt: "Seamless and welded industrial steel pipes",
       items: ["Seamless", "Welded"]
     },
     {
       title: "Butt Weld Pipe Fittings",
       icon: Droplet,
+      image: categoryImages.buttWeldFittings,
+      imageAlt: "Butt weld pipe elbows, tees, reducers and caps",
       items: ["Elbow", "Tee", "Reducer", "Cap", "Bend"]
     },
     {
       title: "Forged Fittings",
       icon: Nut,
+      image: categoryImages.forgedFittings,
+      imageAlt: "Forged steel unions, couplings, plugs and nipples",
       items: ["Elbow", "Tee", "Union", "Cross", "Coupling", "Cap", "Bushing", "Plug", "Swage Nipple", "Welding Boss", "Hexagon Nipple", "Adapter", "Insert", "Weldolet", "Elbowlet", "Socket", "Thredolet", "Nipolet", "Letrolet", "etc."]
     },
     {
       title: "ANSI/API6A/DIN Flanges",
       icon: Layers,
+      image: categoryImages.flanges,
+      imageAlt: "ANSI, API 6A and DIN steel flanges",
       items: ["Weldneck", "Slip-on", "Blind", "Socket Weld", "Orifice Flange", "Swivel Ring Flange", "etc."]
     },
     {
       title: "Valves",
       icon: Droplet,
+      image: categoryImages.valves,
+      imageAlt: "Industrial ball, gate, check and butterfly valves",
       items: ["Ball", "Gate", "Global Check", "Butterfly Valve", "Strainer", "High Technology Valves (Wellhead, Hydro cracking Valves, Big Caliber Ball Valve, Flat Disc Valve, etc.)"]
     },
     {
       title: "Fasteners & Sealing",
       icon: Nut,
+      image: categoryImages.fastenersSealing,
+      imageAlt: "Industrial stud bolts, nuts and sealing gaskets",
       items: ["Stud Bolts & Nuts Sizes", "Gasket – Asbestos & Non Asbestos", "Spiral Wound Gasket", "RTJ Gaskets"]
     },
     {
       title: "Electronic Components",
       icon: Zap,
+      image: categoryImages.electronicComponents,
+      imageAlt: "Industrial electronic components, connectors and control cables",
       items: ["Connector & Cables", "Electrical, Test, Office & IT", "Process Control & Automation", "Health, Safety & Hygiene", "Tools & Industrial Consumables"]
     },
     {
       title: "Pumps & Chemicals",
       icon: Shield,
+      image: categoryImages.pumpsChemicals,
+      imageAlt: "Industrial pump and chemical products",
       items: ["Industrial Pumps", "Chemicals, Paints"]
     }
   ];
@@ -128,6 +154,18 @@ export default function Products() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {productCategories.map((category, index) => (
               <div key={index} className="border border-border bg-white flex flex-col h-full hover:border-primary shadow-sm hover:shadow-md transition-all group">
+                <div className="relative aspect-[4/3] overflow-hidden bg-primary border-b-4 border-accent">
+                  <ResponsiveImage
+                    sources={category.image}
+                    alt={category.imageAlt}
+                    width={1024}
+                    height={1024}
+                    loading="lazy"
+                    sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                    className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent opacity-80" />
+                </div>
                 <div className="p-8 border-b border-border bg-white flex flex-col items-start gap-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <category.icon className="w-10 h-10 text-accent" />
                   <h3 className="text-2xl font-display font-bold uppercase tracking-tight leading-tight">{category.title}</h3>

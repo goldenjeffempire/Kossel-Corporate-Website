@@ -32,7 +32,7 @@ export function ResponsiveImage({
   ...props
 }: ResponsiveImageProps) {
   return (
-    <picture>
+    <picture className="block">
       <source type="image/avif" srcSet={buildSrcSet(sources.avif)} sizes={sizes} />
       <source type="image/webp" srcSet={buildSrcSet(sources.webp)} sizes={sizes} />
       <img
