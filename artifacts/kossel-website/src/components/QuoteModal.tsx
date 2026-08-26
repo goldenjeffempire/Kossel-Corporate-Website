@@ -88,7 +88,7 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
             </div>
             <h3 className="text-2xl font-display font-bold uppercase tracking-tight text-primary">Request Submitted</h3>
             <p className="text-muted-foreground">
-              Thank you for reaching out to Kossel Ltd. A member of our commercial team will contact you shortly.
+              Thank you for reaching out to Kossel Group LTD. A member of our commercial team will contact you shortly.
             </p>
           </div>
         ) : (

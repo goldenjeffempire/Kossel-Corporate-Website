@@ -43,7 +43,7 @@ export function Navbar() {
           <Link href="/">
             <div className="flex flex-col cursor-pointer">
               <span className="font-display font-black text-3xl tracking-tighter text-primary leading-none">
-                KOSSEL <span className="text-accent text-xl">LTD.</span>
+                KOSSEL GROUP <span className="text-accent text-xl">LTD.</span>
               </span>
               <span className="text-[0.6rem] font-bold text-secondary uppercase tracking-widest leading-none mt-1">
                 Engineering & Oilfield Resources

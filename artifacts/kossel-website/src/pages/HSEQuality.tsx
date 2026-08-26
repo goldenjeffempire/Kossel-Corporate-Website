@@ -144,7 +144,7 @@ export default function HSEQuality() {
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
           <p className="text-white/80 text-xl md:text-2xl font-light leading-relaxed">
-            Safety and quality are not just policies; they are the fundamental drivers of our corporate culture. Every team member at Kossel Ltd. is empowered and expected to uphold these standards in every project, procurement, and daily operation.
+            Safety and quality are not just policies; they are the fundamental drivers of our corporate culture. Every team member at Kossel Group LTD. is empowered and expected to uphold these standards in every project, procurement, and daily operation.
           </p>
         </div>
       </section>

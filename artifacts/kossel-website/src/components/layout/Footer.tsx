@@ -11,7 +11,7 @@ export function Footer() {
           <div>
             <div className="flex flex-col mb-6">
               <span className="font-display font-black text-3xl tracking-tighter text-white leading-none">
-                KOSSEL <span className="text-accent text-xl">LTD.</span>
+                KOSSEL GROUP <span className="text-accent text-xl">LTD.</span>
               </span>
               <span className="text-[0.6rem] font-bold text-white/60 uppercase tracking-widest leading-none mt-1">
                 Engineering & Oilfield Resources
@@ -107,7 +107,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/50 uppercase tracking-wider font-semibold">
-          <p>&copy; {new Date().getFullYear()} Kossel Ltd. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Kossel Group LTD. All Rights Reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/hse-quality"><span className="hover:text-white cursor-pointer">HSE Policy</span></Link>
             <Link href="/hse-quality"><span className="hover:text-white cursor-pointer">Quality Management</span></Link>

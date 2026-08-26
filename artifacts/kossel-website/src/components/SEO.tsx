@@ -184,7 +184,7 @@ export function SEO({
   title,
   description,
   path,
-  imageAlt = "Kossel Ltd. industrial engineering and oilfield operations",
+  imageAlt = "Kossel Group LTD. industrial engineering and oilfield operations",
   indexable = true,
 }: SEOProps) {
   useEffect(() => {
@@ -213,7 +213,7 @@ export function SEO({
     upsertMeta("property", "og:description", description);
     upsertMeta("property", "og:url", canonicalUrl);
     upsertMeta("property", "og:type", "website");
-    upsertMeta("property", "og:site_name", "Kossel Ltd.");
+    upsertMeta("property", "og:site_name", seoData.siteName);
     upsertMeta("property", "og:locale", "en_NG");
     upsertMeta("property", "og:image", imageUrl);
     upsertMeta("property", "og:image:alt", imageAlt);

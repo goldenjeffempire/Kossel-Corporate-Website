@@ -74,7 +74,7 @@ export default function Contact() {
     <div className="flex flex-col bg-white">
       <SEO
         title="Contact Kossel | Oilfield Engineering & Procurement"
-        description="Contact Kossel Ltd. in Nigeria, the UK or USA for industrial MRO, oilfield engineering, procurement and project support."
+        description="Contact Kossel Group LTD. in Nigeria, the UK or USA for industrial MRO, oilfield engineering, procurement and project support."
         path="/contact"
         imageAlt="Kossel engineering team ready to support industrial projects"
       />

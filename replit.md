@@ -1,6 +1,6 @@
-# Kossel Ltd.
+# Kossel Group LTD.
 
-A premium corporate website for Kossel Ltd., showcasing its engineering, industrial services, products, projects, and HSE and quality capabilities.
+A premium corporate website for Kossel Group LTD., showcasing its engineering, industrial services, products, projects, and HSE and quality capabilities.
 
 ## Run & Operate
 

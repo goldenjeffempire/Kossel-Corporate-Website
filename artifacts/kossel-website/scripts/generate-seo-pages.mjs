@@ -218,7 +218,7 @@ function renderNotFound(templateHtml) {
     .replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "");
 
   const headTags = [
-    "<title>Page Not Found | Kossel Ltd.</title>",
+    "<title>Page Not Found | Kossel Group LTD.</title>",
     '<meta name="robots" content="noindex, nofollow" />',
     `<meta name="author" content="${escapeHtml(seoData.siteName)}" />`,
     `<meta name="application-name" content="${escapeHtml(seoData.siteName)}" />`,

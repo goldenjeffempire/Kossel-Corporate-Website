@@ -7,8 +7,8 @@ export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
       <SEO
-        title="Page Not Found | Kossel Ltd."
-        description="The requested Kossel Ltd. page could not be found."
+        title="Page Not Found | Kossel Group LTD."
+        description="The requested Kossel Group LTD. page could not be found."
         path={window.location.pathname}
         indexable={false}
       />
