@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Kossel Ltd."
+description = "A premium corporate website for Kossel Ltd., presenting its engineering, oilfield resources, procurement, construction, installation, industrial maintenance, instrumentation, marine logistics, haulage, inspection, products, HSE and quality capabilities."
+version = "1.0.0"
+id = "artifacts/kossel-website"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25235
+
+[services.development]
+run = "pnpm --filter @workspace/kossel-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kossel-website", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/kossel-website/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25235"
+BASE_PATH = "/"

@@ -1,0 +1,603 @@
+Build a Premium Corporate Website for Kossel Ltd.
+
+You are an expert senior frontend engineer, UI/UX designer, and product designer. Build a production-quality corporate website for Kossel Ltd., an engineering, oilfield resources, procurement, construction, installation, industrial maintenance, instrumentation, marine logistics, haulage, and inspection company.
+
+The goal is to create a strong, modern corporate MVP that looks credible enough for an established engineering/oil & gas company.
+
+Design Direction
+
+Do NOT make this look like a generic startup website.
+
+The visual identity should communicate:
+
+- Engineering
+- Oil & gas
+- Industrial capability
+- Reliability
+- Safety
+- Professionalism
+- Technical expertise
+- Corporate credibility
+
+Use a premium industrial aesthetic:
+
+- Deep navy / charcoal
+- White
+- Steel gray
+- Restrained industrial orange accent
+- Strong typography
+- Large high-quality imagery
+- Clean grids
+- Generous spacing
+- Subtle animations
+- Professional cards
+- Strong visual hierarchy
+
+Avoid excessive gradients, excessive rounded cards, cartoon illustrations, flashy animations, or overly futuristic styling.
+
+The design should feel comparable to a high-end engineering/oilfield corporate website.
+
+Reference Material
+
+I have provided images/brochure materials from Kossel Ltd.
+
+Use the provided materials as the primary visual/content reference.
+
+Important:
+
+- Do not invent certifications.
+- Do not invent clients.
+- Do not invent projects.
+- Do not invent addresses, phone numbers, emails, statistics, or company claims.
+- If information is missing, create a clearly marked placeholder that can easily be replaced.
+- Preserve the actual company identity and services shown in the supplied materials.
+- Do not simply reproduce the old brochure design. Modernize it substantially.
+
+Technology
+
+Use:
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Modern component architecture
+- Responsive design
+- Accessible semantic HTML
+- Optimized images
+- Clean reusable components
+
+Structure the project so that the website can later be connected to a backend/CMS.
+
+MVP Pages
+
+Build these pages:
+
+1. Home
+2. About
+3. Services
+4. Products
+5. Projects
+6. HSE & Quality
+7. Contact
+
+Also implement a reusable Request a Quote CTA/form.
+
+---
+
+1. HOME PAGE
+
+Create a strong homepage with the following sections.
+
+Hero
+
+Use a powerful industrial/oilfield image.
+
+Headline direction:
+
+Engineering Solutions. Oilfield Resources. Built for Industry.
+
+Supporting text:
+
+Kossel Ltd. delivers engineering, procurement, construction, installation, industrial maintenance and oilfield resource solutions for demanding industrial operations.
+
+Buttons:
+
+Our Services
+
+Request a Quote
+
+The hero should immediately communicate what the company does.
+
+---
+
+About Kossel
+
+Create a concise corporate introduction.
+
+Include:
+
+- Who Kossel is
+- Engineering capability
+- Oilfield/industrial focus
+- Commitment to quality and safety
+
+CTA:
+
+Learn More →
+
+---
+
+Core Services
+
+Create premium service cards for:
+
+- Engineering Design
+- Procurement & Logistics
+- Construction
+- Pipeline & Cable Laying
+- Industrial Maintenance
+- Instrumentation
+- Marine Logistics
+- Inspection
+
+Each card should have:
+
+- Appropriate icon or image
+- Service name
+- Short description
+- Learn More link
+
+---
+
+Products & Materials
+
+Show major product categories:
+
+- Pipes & Fittings
+- Valves
+- Flanges & Gaskets
+- Pumps
+- Instrumentation
+- Stud Bolts & Nuts
+- Industrial Components
+
+Use a clean industrial catalogue-style layout.
+
+CTA:
+
+View Products
+
+---
+
+Why Kossel
+
+Create a strong credibility section.
+
+Potential themes:
+
+Engineering Expertise
+
+Technical capability across engineering and industrial services.
+
+Quality Focus
+
+Commitment to delivering work and materials according to project requirements.
+
+Safety First
+
+HSE-conscious approach to industrial operations.
+
+Reliable Delivery
+
+Procurement, logistics and project support designed around client requirements.
+
+Do not make unsupported numerical claims.
+
+---
+
+Projects / Capabilities
+
+Create a visually impressive project/capability gallery.
+
+Use the provided images where appropriate.
+
+Include categories such as:
+
+- Engineering
+- Construction
+- Pipeline
+- Procurement
+- Industrial Services
+
+Do not invent specific project names or clients.
+
+Use placeholders where project information is unavailable.
+
+CTA:
+
+View Projects
+
+---
+
+HSE & Quality
+
+Create a high-trust section.
+
+Include:
+
+Health & Safety
+
+Safety is integral to industrial and engineering operations.
+
+Quality Assurance
+
+Consistent processes focused on meeting project and client requirements.
+
+Environmental Responsibility
+
+Responsible operations with attention to environmental impact.
+
+CTA:
+
+HSE & Quality →
+
+Do not display specific certifications unless they are confirmed in the supplied materials.
+
+---
+
+Final CTA
+
+Large premium section:
+
+Have an Engineering or Oilfield Requirement?
+
+Let's discuss how Kossel can support your project.
+
+Buttons:
+
+Request a Quote
+
+Contact Us
+
+---
+
+Footer
+
+Include:
+
+- Kossel logo/name
+- Short company description
+- Navigation
+- Services
+- Contact information
+- Social media placeholders
+- Privacy Policy
+- Terms
+- Copyright
+
+---
+
+2. ABOUT PAGE
+
+Sections:
+
+- Company Overview
+- Our Story
+- Vision
+- Mission
+- Core Values
+- Capabilities
+- HSE Commitment
+- Quality Commitment
+
+Create a professional timeline only if the supplied company information provides verified historical dates.
+
+---
+
+3. SERVICES PAGE
+
+Create a professional service catalogue.
+
+Services:
+
+Engineering Design
+
+Engineering design and technical solutions.
+
+Procurement & Logistics
+
+Sourcing, procurement and movement of engineering/oilfield materials.
+
+Construction
+
+Engineering and industrial construction support.
+
+Pipeline & Cable Laying
+
+Pipeline and associated infrastructure installation.
+
+Industrial Maintenance
+
+Maintenance and operational support.
+
+Instrumentation
+
+Instrumentation and process-control solutions.
+
+Marine Logistics
+
+Marine logistics and transportation support.
+
+Inspection
+
+Inspection and quality-control services.
+
+Each service should have:
+
+- Image/icon
+- Overview
+- Capabilities
+- CTA
+
+Design the architecture so each service can later have its own dynamic detail page.
+
+---
+
+4. PRODUCTS PAGE
+
+Create a professional product catalogue, NOT an e-commerce store.
+
+Categories:
+
+- Pipes & Fittings
+- Valves
+- Flanges
+- Gaskets
+- Pumps
+- Instrumentation
+- Stud Bolts & Nuts
+- Industrial Components
+- Tools & Consumables
+
+Each category should contain:
+
+- Image
+- Description
+- Example products
+- Request Information button
+
+The request button should lead to the quote/contact workflow.
+
+---
+
+5. PROJECTS PAGE
+
+Create a project/capability gallery.
+
+Include filtering:
+
+All | Engineering | Construction | Pipeline | Procurement | Installation | Inspection
+
+Each project card should support:
+
+- Image
+- Category
+- Project title
+- Short description
+- Location
+- Scope of work
+
+However, use placeholders for unknown information rather than inventing facts.
+
+Design the architecture so project details can later be connected to a CMS/database.
+
+---
+
+6. HSE & QUALITY PAGE
+
+Create a highly professional page.
+
+Sections:
+
+Health & Safety
+
+Environmental Responsibility
+
+Quality Assurance
+
+Quality Control
+
+Compliance
+
+Certifications
+
+For certifications, use placeholders if verified certification documents are not available.
+
+This page should communicate that HSE and quality are core parts of the company's operations.
+
+---
+
+7. CONTACT PAGE
+
+Create a professional contact page.
+
+Include:
+
+- Company contact details
+- Office location
+- Phone
+- Email
+- WhatsApp CTA
+- Map placeholder
+- Contact form
+
+Contact form:
+
+- Full Name
+- Company
+- Email
+- Phone
+- Service Required
+- Message
+
+CTA:
+
+Send Enquiry
+
+---
+
+REQUEST A QUOTE
+
+Create a reusable Request Quote modal/page.
+
+Fields:
+
+- Full Name
+- Company
+- Email
+- Phone
+- Service Required
+- Product Required
+- Project Location
+- Quantity
+- Project Description
+- Expected Timeline
+- Upload Specification/Document
+
+For this MVP, the form can use frontend validation and a placeholder submission handler.
+
+Structure the code so it can later connect to:
+
+- FastAPI/Django
+- PostgreSQL
+- Email notifications
+- CRM
+- WhatsApp
+
+---
+
+NAVIGATION
+
+Desktop navigation:
+
+KOSSEL LTD.
+
+Home
+About
+Services
+Products
+Projects
+HSE & Quality
+Contact
+
+Primary CTA:
+
+REQUEST A QUOTE
+
+On mobile, implement a polished mobile menu.
+
+---
+
+UX REQUIREMENTS
+
+The website must be:
+
+- Fully responsive
+- Mobile-first
+- Fast
+- Accessible
+- Keyboard navigable
+- SEO-friendly
+- Semantic
+- Professional
+- Easy to maintain
+
+Use subtle animations for:
+
+- Page transitions
+- Hero elements
+- Scroll reveals
+- Cards
+- Buttons
+- Navigation
+
+Animations must enhance the experience rather than distract from the corporate nature of the website.
+
+---
+
+COMPONENT ARCHITECTURE
+
+Create reusable components such as:
+
+- Navbar
+- MobileMenu
+- Hero
+- SectionHeader
+- ServiceCard
+- ProductCard
+- ProjectCard
+- CTASection
+- ContactForm
+- QuoteForm
+- Footer
+- ImageGallery
+- PageHeader
+- Button
+- Badge
+- Modal
+
+Keep the architecture clean and scalable.
+
+---
+
+CONTENT RULE
+
+Do not fill the website with generic AI-generated corporate claims.
+
+Where exact company information is unavailable:
+
+"[CLIENT TO PROVIDE]"
+
+Use this approach for:
+
+- Phone numbers
+- Email
+- Address
+- Certifications
+- Client logos
+- Project names
+- Project statistics
+- Company statistics
+
+The final website must feel authentic, not fabricated.
+
+---
+
+VISUAL QUALITY BAR
+
+The final result should look like a website designed by a professional agency for a serious engineering/oilfield company.
+
+Prioritize:
+
+1. Strong typography
+2. Excellent spacing
+3. High-quality imagery
+4. Clear information hierarchy
+5. Premium navigation
+6. Professional service presentation
+7. Strong CTA placement
+8. Mobile responsiveness
+9. Consistent design system
+10. Realistic corporate content
+
+Do not make every section look like a collection of cards.
+
+Use different layouts throughout the page: full-width imagery, split sections, grids, dark sections, editorial layouts, statistics, and strong CTA blocks.
+
+Final Deliverable
+
+Build the complete frontend MVP with all seven pages, reusable components, responsive layouts, placeholder content where necessary, and a clean scalable architecture.
+
+Start with the Home page first, making it exceptionally polished. Then implement the remaining pages using the same design system.
+
+Do not ask me unnecessary questions. Make reasonable design decisions based on the supplied Kossel materials and clearly mark information that requires client verification.
