@@ -1,9 +1,9 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Target, Eye, Crosshair } from "lucide-react";
+import { Crosshair } from "lucide-react";
 
-import teamImg from "@assets/generated_images/kossel-engineering-team_2.jpg";
-import engineeringImg from "@assets/generated_images/engineering-design.jpg";
+import teamImg from "@assets/generated_images/kossel-african-engineering-team.jpg";
+import engineeringImg from "@assets/generated_images/kossel-african-design-engineers.jpg";
 
 export default function About() {
   return (
@@ -70,62 +70,57 @@ export default function About() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="bg-primary text-white border-t border-border">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          
-          <div className="relative min-h-[400px] hidden lg:block">
-            <img 
-              src={teamImg} 
-              alt="Engineering Collaboration" 
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover filter sepia opacity-50 mix-blend-overlay"
-            />
-            <div className="absolute inset-0 bg-primary/40" />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-primary" />
-          </div>
-
-          <div className="p-12 md:p-24 flex flex-col justify-center">
-            <h3 className="text-4xl font-display font-black uppercase tracking-tight mb-12 border-b-2 border-white/10 pb-6">
-              Our Core Philosophy
-            </h3>
-            
-            <div className="space-y-12">
-              <div className="flex gap-8 group">
-                <Eye className="w-12 h-12 text-accent flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <div>
-                  <h4 className="text-2xl font-display font-bold uppercase tracking-wide mb-4">Our Vision</h4>
-                  <p className="text-white/70 leading-relaxed text-lg font-light">
-                    The Company will continue to move forward and become the leading Engineering, Procurement, Installation and Commissioning firm in Nigeria and eventually Africa sub region, while delivering projects that consistently meet international standards.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-8 group">
-                <Target className="w-12 h-12 text-accent flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <div>
-                  <h4 className="text-2xl font-display font-bold uppercase tracking-wide mb-4">Our Mission</h4>
-                  <p className="text-white/70 leading-relaxed text-lg font-light mb-6">
-                    With a well-defined direction in place, the path to realizing our Vision is based on fundamental drivers, instrumental in achieving our goals. Our mission is:
-                  </p>
-                  <ul className="space-y-4 text-white/70 text-base">
-                    {[
-                      "To undertake the engineering and construction business with a focus on becoming the leader in product costing while building excellence in every aspect to meet customers' stringent requirements regarding quality, on-time delivery, safety and environmental concerns.",
-                      "To develop an effective management that stresses productivity, perpetual development of the organization, and instilling work ethics in all personnel.",
-                      "To build value for the organization in order to become a unique and distinct firm.",
-                      "Follow best practices in procurement, supplies, services and logistics.",
-                      "To remain focused on controlled organizational growth and recognizing those who contribute to this growth."
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span className="text-accent font-bold mr-4">/</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+      <section className="bg-primary py-20 text-white md:py-28">
+        <div className="container mx-auto max-w-7xl px-4 md:px-8">
+          <div className="mb-12 flex items-end justify-between border-b border-white/15 pb-7">
+            <div>
+              <p className="mb-3 font-display text-sm font-bold uppercase tracking-[0.24em] text-accent">
+                What guides us
+              </p>
+              <h3 className="font-display text-4xl font-black uppercase tracking-tight md:text-6xl">
+                Our Core Philosophy
+              </h3>
             </div>
+            <span className="hidden font-display text-7xl font-black text-white/5 md:block">KOSSEL</span>
           </div>
-          
+
+          <div className="grid gap-5 lg:grid-cols-2">
+            <article className="group relative min-h-[520px] overflow-hidden">
+              <img
+                src={teamImg}
+                alt="Black African engineers collaborating at an industrial facility"
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/25 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-12">
+                <span className="mb-4 block font-display text-sm font-bold uppercase tracking-[0.22em] text-accent">
+                  01 / Vision
+                </span>
+                <h4 className="max-w-xl font-display text-3xl font-black uppercase leading-tight md:text-4xl">
+                  Advancing engineering excellence across Nigeria and Africa
+                </h4>
+              </div>
+            </article>
+
+            <article className="group relative min-h-[520px] overflow-hidden">
+              <img
+                src={engineeringImg}
+                alt="Black African engineers developing technical solutions"
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/25 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-12">
+                <span className="mb-4 block font-display text-sm font-bold uppercase tracking-[0.22em] text-accent">
+                  02 / Mission
+                </span>
+                <h4 className="max-w-xl font-display text-3xl font-black uppercase leading-tight md:text-4xl">
+                  Delivering quality, safety and dependable industrial value
+                </h4>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
       

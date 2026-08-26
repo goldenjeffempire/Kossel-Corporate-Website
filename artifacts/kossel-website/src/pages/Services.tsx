@@ -1,8 +1,8 @@
 import { Settings, Truck, Anchor, Cog } from "lucide-react";
-import teamImg from "@assets/generated_images/kossel-engineering-team_2.jpg";
-import pipelineImg from "@assets/generated_images/kossel-pipeline-installation_2.jpg";
-import instrumentationImg from "@assets/generated_images/kossel-instrumentation.jpg";
-import marineImg from "@assets/generated_images/kossel-marine-logistics.jpg";
+import teamImg from "@assets/generated_images/kossel-african-engineering-team.jpg";
+import pipelineImg from "@assets/generated_images/kossel-african-pipeline-team.jpg";
+import instrumentationImg from "@assets/generated_images/kossel-african-instrumentation-engineer.jpg";
+import marineImg from "@assets/generated_images/kossel-african-marine-team.jpg";
 
 export default function Services() {
   const servicesList = [

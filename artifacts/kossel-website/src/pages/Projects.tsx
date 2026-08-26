@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-import pipelineImg from "@assets/generated_images/kossel-pipeline-installation_2.jpg";
-import engineeringImg from "@assets/generated_images/engineering-design.jpg";
+import pipelineImg from "@assets/generated_images/kossel-african-pipeline-team.jpg";
+import engineeringImg from "@assets/generated_images/kossel-african-design-engineers.jpg";
 
 const projectsData = [
   {

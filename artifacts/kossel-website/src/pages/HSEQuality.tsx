@@ -1,5 +1,5 @@
 import { ShieldCheck, Target, HeartHandshake, CheckCircle2 } from "lucide-react";
-import hseImg from "@assets/generated_images/kossel-hse-inspection_2.jpg";
+import hseImg from "@assets/generated_images/kossel-african-hse-team.jpg";
 
 export default function HSEQuality() {
   return (

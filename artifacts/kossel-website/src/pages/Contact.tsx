@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
-import teamImg from "@assets/generated_images/kossel-engineering-team_2.jpg";
+import teamImg from "@assets/generated_images/kossel-african-engineering-team.jpg";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
