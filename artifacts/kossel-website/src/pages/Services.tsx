@@ -1,4 +1,5 @@
 import { Settings, Truck, Anchor, Cog } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import teamImg from "@assets/generated_images/kossel-african-engineering-team.jpg";
 import pipelineImg from "@assets/generated_images/kossel-african-pipeline-team.jpg";
 import instrumentationImg from "@assets/generated_images/kossel-african-instrumentation-engineer.jpg";
@@ -20,12 +21,20 @@ export default function Services() {
 
   return (
     <div className="flex flex-col bg-white">
+      <SEO
+        title="Oilfield Engineering & Industrial Services | Kossel"
+        description="Explore Kossel's civil, mechanical and electrical engineering, P&ID design, pipeline installation, instrumentation, maintenance and marine logistics services."
+        path="/services"
+        imageAlt="Kossel instrumentation engineer delivering industrial services"
+      />
       {/* Header */}
       <section className="relative h-[60vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent overflow-hidden">
         <div className="absolute inset-0 bg-primary">
           <img 
             src={instrumentationImg}
-            alt="Industrial Services Overview"
+             alt="Kossel instrumentation engineer delivering industrial services"
+             width="1024"
+             height="1024"
             loading="lazy"
             className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
           />
@@ -50,7 +59,9 @@ export default function Services() {
             <div className="relative h-[500px] bg-muted overflow-hidden border border-border shadow-xl">
               <img 
                 src={teamImg} 
-                alt="Engineering Design Team" 
+                alt="Kossel engineering design team preparing industrial project documentation"
+                width="1024"
+                height="1024"
                 loading="lazy"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
@@ -87,7 +98,7 @@ export default function Services() {
       {/* Main Service Detailed: Procurement */}
       <section className="py-24 bg-primary text-white overflow-hidden relative border-b border-border">
         <div className="absolute right-0 top-0 w-1/2 h-full hidden lg:block opacity-20 mix-blend-luminosity">
-          <img src={marineImg} alt="Marine logistics operation" className="w-full h-full object-cover" />
+           <img src={marineImg} alt="Marine logistics operation supporting offshore supply chains" width="1024" height="1024" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-primary" />
         </div>
         
@@ -143,7 +154,9 @@ export default function Services() {
           <div className="relative min-h-[500px]">
             <img 
               src={pipelineImg} 
-              alt="Heavy Logistics and Installation" 
+               alt="Pipeline installation and heavy logistics support for energy projects"
+               width="1024"
+               height="1024"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover filter sepia-[0.3]"
             />

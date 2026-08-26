@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Crosshair } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 import teamImg from "@assets/generated_images/kossel-african-engineering-team.jpg";
 import engineeringImg from "@assets/generated_images/kossel-african-design-engineers.jpg";
@@ -8,12 +9,20 @@ import engineeringImg from "@assets/generated_images/kossel-african-design-engin
 export default function About() {
   return (
     <div className="flex flex-col bg-white">
+      <SEO
+        title="About Kossel | Nigerian Oilfield Engineering Partner"
+        description="Learn about Kossel Ltd., an indigenous Nigerian engineering and oilfield resources company serving industrial and energy operations across Africa."
+        path="/about"
+        imageAlt="Kossel engineering team supporting industrial operations"
+      />
       {/* Image-Rich Header */}
       <section className="relative h-[60vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
           <img 
             src={teamImg}
-            alt="Kossel Engineering Team"
+             alt="Kossel engineering team supporting industrial operations in Nigeria"
+             width="1024"
+             height="1024"
             loading="lazy"
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
           />
@@ -57,7 +66,9 @@ export default function About() {
               <div className="relative p-2 bg-white border border-border shadow-xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
                 <img 
                   src={engineeringImg} 
-                  alt="Engineering design capability"
+                   alt="Kossel engineering design capability for oilfield and industrial projects"
+                   width="1024"
+                   height="1024"
                   loading="lazy"
                   className="w-full h-auto object-contain"
                 />
@@ -89,6 +100,8 @@ export default function About() {
               <img
                 src={teamImg}
                 alt="Black African engineers collaborating at an industrial facility"
+                width="1024"
+                height="1024"
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -107,6 +120,8 @@ export default function About() {
               <img
                 src={engineeringImg}
                 alt="Black African engineers developing technical solutions"
+                width="1024"
+                height="1024"
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

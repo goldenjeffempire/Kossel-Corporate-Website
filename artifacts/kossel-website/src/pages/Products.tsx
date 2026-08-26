@@ -1,4 +1,5 @@
 import { Layers, Droplet, Nut, Shield, Zap } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import productsImg from "@assets/generated_images/kossel-industrial-products_2.jpg";
 import fittingsImg from "@assets/generated_images/valves-fittings.jpg";
 
@@ -48,12 +49,20 @@ export default function Products() {
 
   return (
     <div className="flex flex-col bg-white">
+      <SEO
+        title="Industrial MRO Products & Oilfield Components | Kossel"
+        description="Source valves, flanges, pipes, fittings, fasteners, pumps, chemicals and industrial MRO components through Kossel's procurement division."
+        path="/products"
+        imageAlt="Industrial valves and components for Kossel procurement"
+      />
       {/* Visual Header */}
       <section className="relative h-[60vh] min-h-[450px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
           <img 
             src={productsImg}
-            alt="Industrial Products Inventory"
+             alt="Industrial MRO products and oilfield components inventory"
+             width="1024"
+             height="1024"
             loading="lazy"
             className="w-full h-full object-cover opacity-50 mix-blend-luminosity"
           />
@@ -92,7 +101,9 @@ export default function Products() {
             <div className="relative h-[400px] border-8 border-muted p-2 bg-white shadow-xl">
               <img 
                 src={fittingsImg} 
-                alt="Product Catalogue" 
+                alt="Industrial valves and pipe fittings in the Kossel product catalogue"
+                width="1024"
+                height="1024"
                 className="w-full h-full object-cover filter contrast-125"
               />
             </div>
@@ -132,8 +143,8 @@ export default function Products() {
       
       {/* Drilling Contractors Snippet */}
       <section className="relative py-24 bg-primary text-white overflow-hidden border-t-8 border-accent">
-        <div className="absolute inset-0">
-          <img src={productsImg} alt="Drilling Equipment" className="w-full h-full object-cover opacity-10 mix-blend-luminosity" />
+         <div className="absolute inset-0">
+           <img src={productsImg} alt="Drilling equipment and industrial components for energy operations" width="1024" height="1024" className="w-full h-full object-cover opacity-10 mix-blend-luminosity" />
         </div>
         <div className="container relative z-10 mx-auto px-4 max-w-5xl">
           <div className="text-center mb-16">

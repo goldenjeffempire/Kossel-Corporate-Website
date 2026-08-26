@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://kosselgroup.com/sitemap.xml

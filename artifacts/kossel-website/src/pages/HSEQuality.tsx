@@ -1,15 +1,24 @@
 import { ShieldCheck, Target, HeartHandshake, CheckCircle2 } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import hseImg from "@assets/generated_images/kossel-african-hse-team.jpg";
 
 export default function HSEQuality() {
   return (
     <div className="flex flex-col bg-white">
+      <SEO
+        title="HSE & Quality Management | Kossel Oilfield Services"
+        description="See how Kossel integrates health, safety, environmental protection and quality management into engineering and oilfield operations."
+        path="/hse-quality"
+        imageAlt="Kossel HSE team reviewing safety and quality procedures"
+      />
       {/* Visual Header */}
       <section className="relative h-[55vh] min-h-[450px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
           <img 
             src={hseImg}
-            alt="HSE Inspection"
+             alt="Kossel HSE team reviewing safety and quality procedures"
+             width="1024"
+             height="1024"
             loading="lazy"
             className="w-full h-full object-cover opacity-50 mix-blend-luminosity"
           />
@@ -119,8 +128,10 @@ export default function HSEQuality() {
       <section className="relative py-32 bg-primary text-white text-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={hseImg} 
-            alt="Safety Culture" 
+             src={hseImg} 
+             alt="Kossel safety culture in industrial operations"
+             width="1024"
+             height="1024"
             loading="lazy" 
             className="w-full h-full object-cover opacity-20 mix-blend-luminosity transform scale-105"
           />

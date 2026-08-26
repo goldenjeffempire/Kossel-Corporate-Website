@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 import teamImg from "@assets/generated_images/kossel-african-engineering-team.jpg";
 
@@ -71,12 +72,20 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col bg-white">
+      <SEO
+        title="Contact Kossel | Oilfield Engineering & Procurement"
+        description="Contact Kossel Ltd. in Nigeria, the UK or USA for industrial MRO, oilfield engineering, procurement and project support."
+        path="/contact"
+        imageAlt="Kossel engineering team ready to support industrial projects"
+      />
       {/* Immersive Header */}
       <section className="relative h-[50vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
           <img 
             src={teamImg}
-            alt="Kossel Operations Hub"
+             alt="Kossel engineering team ready to support industrial projects"
+             width="1024"
+             height="1024"
             loading="lazy"
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
           />

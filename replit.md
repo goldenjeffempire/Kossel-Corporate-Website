@@ -8,6 +8,7 @@ A premium corporate website for Kossel Ltd., showcasing its engineering, industr
 - `pnpm run typecheck` — full typecheck across all packages
 - `PORT=25235 BASE_PATH=/ pnpm --filter @workspace/kossel-website run build` — production website build
 - The current marketing website is static and does not require any secrets or a database to run.
+- Render deployment is defined in `render.yaml`; it builds `artifacts/kossel-website/dist/public` as a CDN-backed static site, so the frontend does not sleep.
 
 ## Stack
 
@@ -28,3 +29,4 @@ A premium corporate website for Kossel Ltd., showcasing its engineering, industr
 ## Gotchas
 
 - The Vite configuration requires both `PORT` and `BASE_PATH`; the managed artifact workflow supplies them and uses port `25235` to match the website artifact manifest. Do not create a second website workflow on that port.
+- In Render, the build command supplies `PORT=10000 BASE_PATH=/`; keep both values present because the Vite configuration validates them during builds.

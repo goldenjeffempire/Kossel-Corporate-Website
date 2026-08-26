@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 import pipelineImg from "@assets/generated_images/kossel-african-pipeline-team.jpg";
 import engineeringImg from "@assets/generated_images/kossel-african-design-engineers.jpg";
@@ -60,12 +61,20 @@ export default function Projects() {
 
   return (
     <div className="flex flex-col bg-white min-h-screen">
+      <SEO
+        title="Oilfield Engineering Project Track Record | Kossel"
+        description="Review Kossel's engineering, procurement, pipeline installation, maintenance and logistics track record for complex energy projects."
+        path="/projects"
+        imageAlt="Kossel pipeline installation team delivering an energy project"
+      />
       {/* Immersive Header */}
       <section className="relative h-[50vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
           <img 
             src={pipelineImg}
-            alt="Project Operations"
+             alt="Kossel pipeline installation team delivering an energy project"
+             width="1024"
+             height="1024"
             loading="lazy"
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity filter sepia-[0.2]"
           />
@@ -85,9 +94,9 @@ export default function Projects() {
       {/* Decorative Band */}
       <div className="h-48 w-full bg-muted overflow-hidden relative border-b border-border">
         <div className="absolute inset-0 flex items-center justify-around opacity-30 grayscale mix-blend-multiply">
-            <img src={engineeringImg} alt="Engineering design visualization" className="h-[200%] w-auto object-cover transform rotate-12" />
-            <img src={engineeringImg} alt="" aria-hidden="true" className="h-[200%] w-auto object-cover transform -rotate-12 hidden md:block" />
-            <img src={engineeringImg} alt="" aria-hidden="true" className="h-[200%] w-auto object-cover transform rotate-6 hidden lg:block" />
+            <img src={engineeringImg} alt="Engineering design documentation for industrial project delivery" width="1024" height="1024" className="h-[200%] w-auto object-cover transform rotate-12" />
+            <img src={engineeringImg} alt="" aria-hidden="true" width="1024" height="1024" className="h-[200%] w-auto object-cover transform -rotate-12 hidden md:block" />
+            <img src={engineeringImg} alt="" aria-hidden="true" width="1024" height="1024" className="h-[200%] w-auto object-cover transform rotate-6 hidden lg:block" />
         </div>
       </div>
 
@@ -114,9 +123,12 @@ export default function Projects() {
           </div>
 
           {/* Grid */}
+          <h2 className="mb-10 text-4xl font-display font-black uppercase tracking-tight text-primary">
+            Selected Project Experience
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <div key={project.id} className="border border-border bg-white flex flex-col group hover:border-accent hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <article key={project.id} className="border border-border bg-white flex flex-col group hover:border-accent hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className="p-8 flex flex-col h-full bg-white relative overflow-hidden">
                   
                   {/* Subtle background branding */}
@@ -150,7 +162,7 @@ export default function Projects() {
                   <span className="text-sm font-bold uppercase tracking-widest">Project Details</span>
                   <span className="text-xl font-bold transition-transform group-hover:translate-x-2">→</span>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
 
