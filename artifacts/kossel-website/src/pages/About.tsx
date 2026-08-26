@@ -45,7 +45,7 @@ export default function About() {
                   The company was incorporated in February 5, 2010. The Company was further incorporated into the UK and USA Allied companies as Kossel Engineering (UK) Limited and Kossel Global Group (KGG) respectively, in order to cover the required needs of her customers. 
                 </p>
                 <p className="font-bold text-primary bg-muted p-6 border-l-4 border-primary">
-                  It has a staff strength of [CLIENT TO PROVIDE] and is a member of NUSA.
+                  It has a staff strength of 20 and is a member of NUSA.
                 </p>
                 <p>
                   The birth of the Company was based on the need to provide quality services to the oil and gas industry and in the process ensure human capacity development as propagated by the Federal Government of Nigeria. Kossel Nigeria Limited aims to be a leading oil and gas service provider in Nigeria specifically and Sub-Saharan Africa.
