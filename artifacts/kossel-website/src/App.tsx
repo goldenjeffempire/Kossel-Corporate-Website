@@ -10,6 +10,7 @@ import {
 } from 'wouter';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { ContactFab } from '@/components/layout/ContactFab';
 
 // Pages
 import Home from '@/pages/Home';
@@ -41,6 +42,7 @@ function Router() {
         </RoutedErrorBoundary>
       </main>
       <Footer />
+      <ContactFab />
     </div>
   );
 }

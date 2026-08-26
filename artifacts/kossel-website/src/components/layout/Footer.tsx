@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { KOSSEL_CALL_URL, KOSSEL_PHONE_DISPLAY, KOSSEL_WHATSAPP_URL } from "@/lib/contact";
 
 export function Footer() {
   return (
@@ -59,7 +60,8 @@ export function Footer() {
                   Plot 320 DDPA Housing Estate<br />
                   Jeddo, Delta State<br />
                   <div className="mt-2 text-white">
-                    +234 803 096 7258<br />
+                    <a href={KOSSEL_CALL_URL} className="block hover:text-accent transition-colors">{KOSSEL_PHONE_DISPLAY}</a>
+                    <a href={KOSSEL_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="block text-accent hover:text-white transition-colors">Chat on WhatsApp</a>
                     +234 703 436 0560
                   </div>
                 </address>
