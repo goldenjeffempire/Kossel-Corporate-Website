@@ -15,6 +15,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
+import teamImg from "@assets/generated_images/kossel-engineering-team_2.jpg";
+
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Invalid email address"),
@@ -69,55 +71,65 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col bg-white">
-      {/* Header */}
-      <section className="bg-primary py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight text-white mb-4">
+      {/* Immersive Header */}
+      <section className="relative h-[50vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
+        <div className="absolute inset-0 bg-primary">
+          <img 
+            src={teamImg}
+            alt="Kossel Operations Hub"
+            loading="lazy"
+            className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent" />
+        </div>
+        <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
+          <h1 className="text-5xl md:text-7xl font-display font-black uppercase tracking-tight text-white mb-6">
             Contact Us
           </h1>
-          <div className="w-24 h-1.5 bg-accent mx-auto mb-6" />
-          <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <div className="w-32 h-2 bg-accent mb-6" />
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl leading-relaxed font-light">
             Global reach, local expertise. Reach out to our teams across Nigeria, the UK, and the USA.
           </p>
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      {/* Main Content Layout */}
+      <section className="py-24">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-display font-bold uppercase tracking-tight text-primary mb-8">
+            {/* Form Section */}
+            <div className="lg:col-span-7 order-2 lg:order-1">
+              <h2 className="text-4xl font-display font-black uppercase tracking-tight text-primary mb-8 border-l-8 border-accent pl-6">
                 Send an Inquiry
               </h2>
               
               {submitted ? (
-                <div className="bg-muted p-12 text-center border border-border">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
-                    <CheckCircle2 className="w-8 h-8" />
+                <div className="bg-muted p-12 md:p-16 border border-border text-center">
+                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 text-green-600">
+                    <CheckCircle2 className="w-10 h-10" />
                   </div>
-                  <h3 className="text-2xl font-display font-bold uppercase tracking-tight text-primary mb-2">Message Sent</h3>
-                  <p className="text-muted-foreground mb-8">
-                    Thank you for reaching out. A representative will contact you shortly.
+                  <h3 className="text-3xl font-display font-bold uppercase tracking-tight text-primary mb-4">Inquiry Received</h3>
+                  <p className="text-muted-foreground text-lg mb-10">
+                    Thank you for reaching out. A representative from our engineering or commercial team will contact you shortly.
                   </p>
-                  <Button variant="outline" onClick={() => { setSubmitted(false); form.reset(); }}>
-                    Send Another Message
+                  <Button variant="outline" size="lg" onClick={() => { setSubmitted(false); form.reset(); }} className="font-bold uppercase tracking-widest">
+                    Submit Another Inquiry
                   </Button>
                 </div>
               ) : (
-                <div className="bg-muted p-8 border border-border">
+                <div className="bg-white border-2 border-border p-8 md:p-12 shadow-sm">
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <FormField
                           control={form.control}
                           name="name"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="uppercase text-xs font-bold tracking-wider">Name</FormLabel>
+                              <FormLabel className="uppercase text-xs font-black tracking-widest text-primary">Full Name</FormLabel>
                               <FormControl>
-                                <Input placeholder="John Doe" {...field} />
+                                <Input placeholder="John Doe" className="h-14 rounded-none border-border focus-visible:ring-accent" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -128,40 +140,40 @@ export default function Contact() {
                           name="email"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="uppercase text-xs font-bold tracking-wider">Email</FormLabel>
+                              <FormLabel className="uppercase text-xs font-black tracking-widest text-primary">Email Address</FormLabel>
                               <FormControl>
-                                <Input type="email" placeholder="john@example.com" {...field} />
+                                <Input type="email" placeholder="john@example.com" className="h-14 rounded-none border-border focus-visible:ring-accent" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
                       </div>
-
+                      
                       <FormField
                         control={form.control}
                         name="subject"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="uppercase text-xs font-bold tracking-wider">Subject</FormLabel>
+                            <FormLabel className="uppercase text-xs font-black tracking-widest text-primary">Subject</FormLabel>
                             <FormControl>
-                              <Input placeholder="Inquiry about..." {...field} />
+                              <Input placeholder="Project Inquiry / Procurement Request" className="h-14 rounded-none border-border focus-visible:ring-accent" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
                         )}
                       />
-
+                      
                       <FormField
                         control={form.control}
                         name="message"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="uppercase text-xs font-bold tracking-wider">Message</FormLabel>
+                            <FormLabel className="uppercase text-xs font-black tracking-widest text-primary">Message Specifications</FormLabel>
                             <FormControl>
                               <Textarea 
-                                placeholder="Your message here..."
-                                className="min-h-[150px] resize-none"
+                                placeholder="Please detail your project requirements..."
+                                className="min-h-[200px] resize-none rounded-none border-border focus-visible:ring-accent p-4"
                                 {...field}
                               />
                             </FormControl>
@@ -174,10 +186,10 @@ export default function Contact() {
                         type="submit" 
                         variant="default" 
                         size="lg" 
-                        className="w-full bg-primary text-white hover:bg-primary/90"
+                        className="w-full bg-primary text-white hover:bg-primary/90 h-16 font-display font-bold uppercase tracking-widest text-lg"
                         disabled={isSubmitting}
                       >
-                        {isSubmitting ? "Sending..." : "Send Message"}
+                        {isSubmitting ? "Transmitting..." : "Submit Inquiry"}
                       </Button>
                     </form>
                   </Form>
@@ -185,50 +197,52 @@ export default function Contact() {
               )}
             </div>
 
-            {/* Offices */}
-            <div>
-              <h2 className="text-3xl font-display font-bold uppercase tracking-tight text-primary mb-8">
-                Global Offices
-              </h2>
-              
-              <div className="space-y-8">
-                {offices.map((office, i) => (
-                  <div key={i} className="flex gap-6 pb-8 border-b border-border last:border-0 last:pb-0">
-                    <MapPin className="w-8 h-8 text-accent flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold uppercase tracking-wider text-primary mb-1">
-                        {office.country}
-                      </h3>
-                      <p className="font-bold text-muted-foreground mb-3">{office.entity}</p>
-                      
-                      <div className="space-y-4">
-                        <p className="text-muted-foreground text-sm whitespace-pre-line leading-relaxed">
-                          {office.address}
-                        </p>
+            {/* Offices Section */}
+            <div className="lg:col-span-5 order-1 lg:order-2">
+              <div className="bg-muted p-10 md:p-12 border-t-8 border-accent sticky top-32">
+                <h2 className="text-3xl font-display font-black uppercase tracking-tight text-primary mb-10">
+                  Global Directory
+                </h2>
+                
+                <div className="space-y-10">
+                  {offices.map((office, i) => (
+                    <div key={i} className="flex gap-6 pb-10 border-b border-border last:border-0 last:pb-0">
+                      <MapPin className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="text-2xl font-display font-bold uppercase tracking-tight text-primary mb-1">
+                          {office.country}
+                        </h3>
+                        <p className="font-bold text-primary mb-4 bg-white inline-block px-3 py-1 border border-border text-sm">{office.entity}</p>
                         
-                        <div className="flex items-start text-sm">
-                          <Phone className="w-4 h-4 text-muted-foreground mr-3 mt-0.5" />
-                          <div className="text-primary font-medium">
-                            {office.phones.map((p, idx) => (
-                              <div key={idx}>{p}</div>
-                            ))}
+                        <div className="space-y-4">
+                          <p className="text-muted-foreground font-medium whitespace-pre-line leading-relaxed">
+                            {office.address}
+                          </p>
+                          
+                          <div className="flex items-start">
+                            <Phone className="w-5 h-5 text-accent mr-3 mt-0.5" />
+                            <div className="text-primary font-bold">
+                              {office.phones.map((p, idx) => (
+                                <div key={idx}>{p}</div>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
 
-                <div className="flex gap-6 pt-4">
-                  <Mail className="w-8 h-8 text-accent flex-shrink-0" />
-                  <div>
-                    <h3 className="text-xl font-bold uppercase tracking-wider text-primary mb-3">
-                      Email Directory
-                    </h3>
-                    <div className="text-sm font-medium text-primary space-y-2">
-                      <a href="mailto:info@kosselgroup.com" className="block hover:text-accent transition-colors">info@kosselgroup.com</a>
-                      <a href="mailto:kosselengineering@yahoo.com" className="block hover:text-accent transition-colors">kosselengineering@yahoo.com</a>
-                      <a href="mailto:r.akaighe@kosselgroup.com" className="block hover:text-accent transition-colors">r.akaighe@kosselgroup.com</a>
+                  <div className="flex gap-6 pt-6 bg-primary text-white p-8 -mx-10 md:-mx-12 -mb-10 md:-mb-12 mt-10">
+                    <Mail className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-2xl font-display font-bold uppercase tracking-tight mb-4">
+                        Email Desk
+                      </h3>
+                      <div className="font-medium space-y-3">
+                        <a href="mailto:info@kosselgroup.com" className="block hover:text-accent transition-colors">info@kosselgroup.com</a>
+                        <a href="mailto:kosselengineering@yahoo.com" className="block hover:text-accent transition-colors">kosselengineering@yahoo.com</a>
+                        <a href="mailto:r.akaighe@kosselgroup.com" className="block text-accent hover:text-white transition-colors">r.akaighe@kosselgroup.com</a>
+                      </div>
                     </div>
                   </div>
                 </div>

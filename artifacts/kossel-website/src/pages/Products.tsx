@@ -1,5 +1,6 @@
-import { Layers, Droplet, Nut, Shield } from "lucide-react";
-import valvesFittingsImage from "@assets/generated_images/valves-fittings.jpg";
+import { Layers, Droplet, Nut, Shield, Zap } from "lucide-react";
+import productsImg from "@assets/generated_images/kossel-industrial-products_2.jpg";
+import brochure4 from "@assets/WhatsApp_Image_2026-08-26_at_9.26.46_AM_(2)_1787732941774.jpeg";
 
 export default function Products() {
   const productCategories = [
@@ -35,75 +36,90 @@ export default function Products() {
     },
     {
       title: "Electronic Components",
-      icon: Shield,
+      icon: Zap,
       items: ["Connector & Cables", "Electrical, Test, Office & IT", "Process Control & Automation", "Health, Safety & Hygiene", "Tools & Industrial Consumables"]
     },
     {
       title: "Pumps & Chemicals",
-      icon: Droplet,
+      icon: Shield,
       items: ["Industrial Pumps", "Chemicals, Paints"]
     }
   ];
 
   return (
     <div className="flex flex-col bg-white">
-      {/* Header */}
-      <section className="bg-primary py-16 md:py-24 border-b-4 border-accent">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight text-white mb-4">
+      {/* Visual Header */}
+      <section className="relative h-[60vh] min-h-[450px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
+        <div className="absolute inset-0 bg-primary">
+          <img 
+            src={productsImg}
+            alt="Industrial Products Inventory"
+            loading="lazy"
+            className="w-full h-full object-cover opacity-50 mix-blend-luminosity"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent" />
+        </div>
+        <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
+          <div className="inline-block bg-accent text-primary font-display font-bold uppercase tracking-widest px-4 py-1.5 mb-6 text-sm">
+            Procurement Division
+          </div>
+          <h1 className="text-5xl md:text-7xl font-display font-black uppercase tracking-tight text-white mb-6">
             Industrial Products
           </h1>
-          <div className="w-24 h-1.5 bg-accent mb-6" />
-          <p className="text-xl text-white/80 max-w-3xl leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl leading-relaxed font-light">
             High-grade materials and components sourced globally to meet exact operational specifications.
           </p>
         </div>
       </section>
 
-      {/* Featured Image */}
-      <section className="bg-muted py-12 border-b border-border">
+      {/* Featured Editorial Section */}
+      <section className="py-24 bg-white border-b border-border">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <div className="relative h-[300px] md:h-[500px] border border-border bg-white overflow-hidden group">
-            {valvesFittingsImage ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-display font-black uppercase tracking-tight text-primary mb-6">
+                Precision Engineered <br/>Components
+              </h2>
+              <div className="w-24 h-2 bg-accent mb-8" />
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Our procurement division ensures that every flange, valve, and fitting delivered to your site meets uncompromising international standards.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                By maintaining strong relationships with global manufacturers, we guarantee both the authenticity of materials and competitive costing across our entire catalogue.
+              </p>
+            </div>
+            
+            <div className="relative h-[400px] border-8 border-muted p-2 bg-white shadow-xl">
               <img 
-                src={valvesFittingsImage} 
-                alt="Valves and Fittings" 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                src={brochure4} 
+                alt="Product Catalogue" 
+                className="w-full h-full object-cover filter contrast-125"
               />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground font-display uppercase tracking-widest">
-                Valves & Fittings Showcase
-              </div>
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
-            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white">
-              <h3 className="font-display font-bold text-2xl md:text-3xl uppercase tracking-wider">Precision Engineered</h3>
-              <p className="text-white/80 font-medium">Flanges, Valves, and Industrial Fittings</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Product Grid */}
-      <section className="py-16 md:py-24">
+      <section className="py-24 bg-muted">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <h2 className="text-3xl font-display font-bold uppercase tracking-tight text-primary mb-12 text-center">
-            Detailed Product Categories
+          <h2 className="text-4xl font-display font-black uppercase tracking-tight text-primary mb-16 text-center">
+            Detailed Catalogue Categories
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {productCategories.map((category, index) => (
-              <div key={index} className="border border-border bg-white flex flex-col h-full hover:border-accent transition-colors group">
-                <div className="p-6 border-b border-border bg-muted flex items-center gap-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                  <category.icon className="w-8 h-8 text-accent" />
-                  <h3 className="text-xl font-bold uppercase tracking-wider">{category.title}</h3>
+              <div key={index} className="border border-border bg-white flex flex-col h-full hover:border-primary shadow-sm hover:shadow-md transition-all group">
+                <div className="p-8 border-b border-border bg-white flex flex-col items-start gap-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <category.icon className="w-10 h-10 text-accent" />
+                  <h3 className="text-2xl font-display font-bold uppercase tracking-tight leading-tight">{category.title}</h3>
                 </div>
-                <div className="p-6 flex-grow">
-                  <ul className="space-y-3">
+                <div className="p-8 flex-grow">
+                  <ul className="space-y-4">
                     {category.items.map((item, i) => (
                       <li key={i} className="flex items-start text-muted-foreground text-sm font-medium">
-                        <span className="text-accent mr-3 mt-1 text-xs">■</span>
-                        <span className="leading-snug">{item}</span>
+                        <span className="text-accent mr-3 mt-1 text-xs font-black">/</span>
+                        <span className="leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -115,35 +131,42 @@ export default function Products() {
       </section>
       
       {/* Drilling Contractors Snippet */}
-      <section className="py-16 md:py-24 bg-primary text-white text-center border-t-4 border-accent">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight mb-8 text-accent">
-            We Support Drilling Contractors & Rig Manufacturers
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-semibold uppercase tracking-wider text-white/70">
-            <div className="text-left space-y-2">
-              <p>Crown blocks</p>
-              <p>Hooks</p>
-              <p>Swivels</p>
-              <p>Blocks</p>
+      <section className="relative py-24 bg-primary text-white overflow-hidden border-t-8 border-accent">
+        <div className="absolute inset-0">
+          <img src={productsImg} alt="Drilling Equipment" className="w-full h-full object-cover opacity-10 mix-blend-luminosity" />
+        </div>
+        <div className="container relative z-10 mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-black uppercase tracking-tight mb-6 text-white">
+              We Support Drilling Contractors <br/>& Rig Manufacturers
+            </h2>
+            <div className="w-24 h-1 bg-accent mx-auto" />
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 text-sm font-bold uppercase tracking-widest text-white/80">
+            <div className="space-y-4">
+              <p className="hover:text-accent transition-colors">Crown blocks</p>
+              <p className="hover:text-accent transition-colors">Hooks</p>
+              <p className="hover:text-accent transition-colors">Swivels</p>
+              <p className="hover:text-accent transition-colors">Blocks</p>
             </div>
-            <div className="text-left space-y-2">
-              <p>Rotary tables</p>
-              <p>Brake systems</p>
-              <p>Draw Works</p>
-              <p>Mud pumps</p>
+            <div className="space-y-4">
+              <p className="hover:text-accent transition-colors">Rotary tables</p>
+              <p className="hover:text-accent transition-colors">Brake systems</p>
+              <p className="hover:text-accent transition-colors">Draw Works</p>
+              <p className="hover:text-accent transition-colors">Mud pumps</p>
             </div>
-            <div className="text-left space-y-2">
-              <p>Fishing tools</p>
-              <p>Wireline equipment</p>
-              <p>Reamers</p>
-              <p>Clutches</p>
+            <div className="space-y-4">
+              <p className="hover:text-accent transition-colors">Fishing tools</p>
+              <p className="hover:text-accent transition-colors">Wireline equipment</p>
+              <p className="hover:text-accent transition-colors">Reamers</p>
+              <p className="hover:text-accent transition-colors">Clutches</p>
             </div>
-            <div className="text-left space-y-2">
-              <p>Thread compound</p>
-              <p>Handling tools</p>
-              <p>Drill pipe & collars</p>
-              <p>Hex kelly</p>
+            <div className="space-y-4">
+              <p className="hover:text-accent transition-colors">Thread compound</p>
+              <p className="hover:text-accent transition-colors">Handling tools</p>
+              <p className="hover:text-accent transition-colors">Drill pipe & collars</p>
+              <p className="hover:text-accent transition-colors">Hex kelly</p>
             </div>
           </div>
         </div>
