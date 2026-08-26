@@ -1,0 +1,1 @@
+- [Imported artifact preview routing](imported-artifact-preview-routing.md) — imported artifact manifests can route the proxy even when no artifact is registered in the workspace.
