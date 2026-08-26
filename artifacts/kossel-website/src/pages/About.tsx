@@ -30,7 +30,7 @@ export default function About() {
         </div>
         <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black uppercase tracking-tight text-white mb-6">
-            Company Profile
+            About Kossel Engineering
           </h1>
           <div className="w-32 h-2 bg-accent mb-6" />
           <p className="text-xl md:text-2xl text-white/80 max-w-3xl leading-relaxed font-light">

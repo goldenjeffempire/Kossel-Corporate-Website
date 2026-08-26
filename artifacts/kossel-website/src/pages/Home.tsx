@@ -50,9 +50,9 @@ export default function Home() {
               Industrial Engineering & MRO
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black uppercase tracking-tighter text-white leading-[0.95] mb-8">
-              Engineered <br/>
-              <span className="text-transparent text-stroke-accent">For Demanding</span> <br/>
-              Operations
+              Industrial <br/>
+              <span className="text-accent">Engineering For</span> <br/>
+              Demanding Operations
             </h1>
             <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed font-light">
               Kossel Ltd. delivers robust industrial MRO, procurement, and heavy engineering services to leading multinational facilities.

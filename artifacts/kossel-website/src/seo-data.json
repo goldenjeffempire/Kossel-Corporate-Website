@@ -1,0 +1,89 @@
+{
+  "siteName": "Kossel Ltd.",
+  "siteUrl": "https://kosselgroup.com",
+  "language": "en",
+  "locale": "en_NG",
+  "defaultImage": "/og-image.jpg",
+  "defaultImageAlt": "Kossel Ltd. industrial engineering and oilfield operations",
+  "organization": {
+    "name": "Kossel Ltd.",
+    "legalName": "Kossel Nigeria Limited",
+    "description": "Industrial engineering, MRO, procurement and oilfield resources company serving operations in Nigeria and beyond.",
+    "email": "info@kosselgroup.com",
+    "areaServed": [
+      "Nigeria",
+      "United Kingdom",
+      "United States"
+    ]
+  },
+  "routes": [
+    {
+      "path": "/",
+      "title": "Industrial Engineering & MRO Services | Kossel Ltd.",
+      "description": "Kossel Ltd. provides industrial MRO, engineering, procurement, construction, pipeline, instrumentation and logistics support across Nigeria and beyond.",
+      "imageAlt": "Kossel Ltd. pipeline installation and industrial engineering operations",
+      "schemaType": "WebPage"
+    },
+    {
+      "path": "/about",
+      "title": "About Kossel | Nigerian Oilfield Engineering Partner",
+      "description": "Learn about Kossel Ltd., an indigenous Nigerian engineering and oilfield resources company serving industrial and energy operations across Africa.",
+      "imageAlt": "Kossel engineering team supporting industrial operations",
+      "schemaType": "AboutPage"
+    },
+    {
+      "path": "/services",
+      "title": "Oilfield Engineering & Industrial Services | Kossel",
+      "description": "Explore Kossel's civil, mechanical and electrical engineering, P&ID design, pipeline installation, instrumentation, maintenance and marine logistics services.",
+      "imageAlt": "Kossel instrumentation engineer delivering industrial services",
+      "schemaType": "CollectionPage",
+      "serviceTypes": [
+        "Industrial engineering",
+        "Procurement and logistics",
+        "Pipeline installation",
+        "Instrumentation",
+        "Industrial maintenance",
+        "Marine logistics",
+        "Inspection"
+      ]
+    },
+    {
+      "path": "/products",
+      "title": "Industrial MRO Products & Oilfield Components | Kossel",
+      "description": "Source valves, flanges, pipes, fittings, fasteners, pumps, chemicals and industrial MRO components through Kossel's procurement division.",
+      "imageAlt": "Industrial valves and components for Kossel procurement",
+      "schemaType": "CollectionPage",
+      "productCategories": [
+        "Pipes",
+        "Butt weld pipe fittings",
+        "Forged fittings",
+        "ANSI, API 6A and DIN flanges",
+        "Valves",
+        "Fasteners and sealing",
+        "Electronic components",
+        "Pumps and chemicals"
+      ]
+    },
+    {
+      "path": "/projects",
+      "title": "Oilfield Engineering Project Track Record | Kossel",
+      "description": "Review Kossel's engineering, procurement, pipeline installation, maintenance and logistics track record for complex energy projects.",
+      "imageAlt": "Kossel pipeline installation team delivering an energy project",
+      "schemaType": "CollectionPage"
+    },
+    {
+      "path": "/hse-quality",
+      "title": "HSE & Quality Management | Kossel Oilfield Services",
+      "description": "See how Kossel integrates health, safety, environmental protection and quality management into engineering and oilfield operations.",
+      "imageAlt": "Kossel HSE team reviewing safety and quality procedures",
+      "schemaType": "WebPage"
+    },
+    {
+      "path": "/contact",
+      "title": "Contact Kossel | Oilfield Engineering & Procurement",
+      "description": "Contact Kossel Ltd. in Nigeria, the UK or USA for industrial MRO, oilfield engineering, procurement and project support.",
+      "imageAlt": "Kossel engineering team ready to support industrial projects",
+      "schemaType": "ContactPage"
+    }
+  ]
+}
