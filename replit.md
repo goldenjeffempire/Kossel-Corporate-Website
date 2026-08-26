@@ -4,7 +4,7 @@ A premium corporate website for Kossel Ltd., showcasing its engineering, industr
 
 ## Run & Operate
 
-- **Kossel Website** workflow — runs the website preview using `PORT=25235 BASE_PATH=/ pnpm --filter @workspace/kossel-website run dev`
+- **artifacts/kossel-website: web** workflow — runs the website preview using the artifact-managed `pnpm --filter @workspace/kossel-website run dev` command
 - `pnpm run typecheck` — full typecheck across all packages
 - `PORT=25235 BASE_PATH=/ pnpm --filter @workspace/kossel-website run build` — production website build
 - The current marketing website is static and does not require any secrets or a database to run.
@@ -27,4 +27,4 @@ A premium corporate website for Kossel Ltd., showcasing its engineering, industr
 
 ## Gotchas
 
-- The Vite configuration requires both `PORT` and `BASE_PATH`; the preview workflow must use port `25235` to match the imported website artifact manifest.
+- The Vite configuration requires both `PORT` and `BASE_PATH`; the managed artifact workflow supplies them and uses port `25235` to match the website artifact manifest. Do not create a second website workflow on that port.
