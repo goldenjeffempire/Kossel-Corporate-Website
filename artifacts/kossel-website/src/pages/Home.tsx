@@ -6,10 +6,8 @@ import teamImg from "@assets/generated_images/kossel-engineering-team_2.jpg";
 import pipelineImg from "@assets/generated_images/kossel-pipeline-installation_2.jpg";
 import productsImg from "@assets/generated_images/kossel-industrial-products_2.jpg";
 import hseImg from "@assets/generated_images/kossel-hse-inspection_2.jpg";
-import brochure1 from "@assets/WhatsApp_Image_2026-08-26_at_9.26.45_AM_1787732941763.jpeg";
-import brochure2 from "@assets/WhatsApp_Image_2026-08-26_at_9.26.46_AM_1787732941773.jpeg";
-import brochure3 from "@assets/WhatsApp_Image_2026-08-26_at_9.26.46_AM_(1)_1787732941773.jpeg";
-import brochure4 from "@assets/WhatsApp_Image_2026-08-26_at_9.26.46_AM_(2)_1787732941774.jpeg";
+import instrumentationImg from "@assets/generated_images/kossel-instrumentation.jpg";
+import marineImg from "@assets/generated_images/kossel-marine-logistics.jpg";
 
 export default function Home() {
   return (
@@ -93,8 +91,8 @@ export default function Home() {
               </div>
               <div className="absolute bottom-0 left-0 w-[60%] h-[60%] z-20 border-8 border-white shadow-2xl transform -translate-y-12 translate-x-12">
                 <img 
-                  src={brochure2} 
-                  alt="Industrial Infrastructure" 
+                  src={instrumentationImg} 
+                  alt="Industrial instrumentation capability" 
                   loading="lazy"
                   className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
                 />
@@ -117,7 +115,7 @@ export default function Home() {
         
         {/* Horizontal scrollable / tight grid of images */}
         <div className="flex gap-4 px-4 overflow-x-auto pb-8 snap-x snap-mandatory">
-          {[brochure1, pipelineImg, brochure3, productsImg, brochure4].map((img, idx) => (
+          {[teamImg, pipelineImg, instrumentationImg, productsImg, marineImg, hseImg].map((img, idx) => (
             <div key={idx} className="relative flex-none w-[80vw] md:w-[400px] h-[300px] snap-center group">
               <img 
                 src={img} 
@@ -182,7 +180,7 @@ export default function Home() {
       {/* 5. Powerful CTA */}
       <section className="relative py-32 bg-primary text-white text-center border-t-8 border-accent overflow-hidden">
         <div className="absolute inset-0">
-          <img src={brochure4} alt="Contact background" loading="lazy" className="w-full h-full object-cover opacity-20 mix-blend-luminosity" />
+          <img src={marineImg} alt="Marine logistics operation" loading="lazy" className="w-full h-full object-cover opacity-20 mix-blend-luminosity" />
           <div className="absolute inset-0 bg-primary/80" />
         </div>
         <div className="container relative z-10 mx-auto px-4 max-w-3xl">

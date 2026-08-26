@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 import pipelineImg from "@assets/generated_images/kossel-pipeline-installation_2.jpg";
-import brochure1 from "@assets/WhatsApp_Image_2026-08-26_at_9.26.45_AM_1787732941763.jpeg";
+import engineeringImg from "@assets/generated_images/engineering-design.jpg";
 
 const projectsData = [
   {
@@ -85,9 +85,9 @@ export default function Projects() {
       {/* Decorative Band */}
       <div className="h-48 w-full bg-muted overflow-hidden relative border-b border-border">
         <div className="absolute inset-0 flex items-center justify-around opacity-30 grayscale mix-blend-multiply">
-            <img src={brochure1} alt="Project blueprints" className="h-[200%] w-auto object-cover transform rotate-12" />
-            <img src={brochure1} alt="Project blueprints" className="h-[200%] w-auto object-cover transform -rotate-12 hidden md:block" />
-            <img src={brochure1} alt="Project blueprints" className="h-[200%] w-auto object-cover transform rotate-6 hidden lg:block" />
+            <img src={engineeringImg} alt="Engineering design visualization" className="h-[200%] w-auto object-cover transform rotate-12" />
+            <img src={engineeringImg} alt="" aria-hidden="true" className="h-[200%] w-auto object-cover transform -rotate-12 hidden md:block" />
+            <img src={engineeringImg} alt="" aria-hidden="true" className="h-[200%] w-auto object-cover transform rotate-6 hidden lg:block" />
         </div>
       </div>
 

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Target, Eye, Crosshair } from "lucide-react";
 
 import teamImg from "@assets/generated_images/kossel-engineering-team_2.jpg";
-import brochure1 from "@assets/WhatsApp_Image_2026-08-26_at_9.26.45_AM_1787732941763.jpeg";
+import engineeringImg from "@assets/generated_images/engineering-design.jpg";
 
 export default function About() {
   return (
@@ -56,8 +56,8 @@ export default function About() {
             <div className="lg:col-span-5">
               <div className="relative p-2 bg-white border border-border shadow-xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
                 <img 
-                  src={brochure1} 
-                  alt="Kossel Corporate Brochure"
+                  src={engineeringImg} 
+                  alt="Engineering design capability"
                   loading="lazy"
                   className="w-full h-auto object-contain"
                 />

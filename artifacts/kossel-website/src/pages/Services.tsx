@@ -1,8 +1,8 @@
 import { Settings, Truck, Anchor, Cog } from "lucide-react";
 import teamImg from "@assets/generated_images/kossel-engineering-team_2.jpg";
 import pipelineImg from "@assets/generated_images/kossel-pipeline-installation_2.jpg";
-import brochure2 from "@assets/WhatsApp_Image_2026-08-26_at_9.26.46_AM_1787732941773.jpeg";
-import brochure3 from "@assets/WhatsApp_Image_2026-08-26_at_9.26.46_AM_(1)_1787732941773.jpeg";
+import instrumentationImg from "@assets/generated_images/kossel-instrumentation.jpg";
+import marineImg from "@assets/generated_images/kossel-marine-logistics.jpg";
 
 export default function Services() {
   const servicesList = [
@@ -24,7 +24,7 @@ export default function Services() {
       <section className="relative h-[60vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent overflow-hidden">
         <div className="absolute inset-0 bg-primary">
           <img 
-            src={brochure2}
+            src={instrumentationImg}
             alt="Industrial Services Overview"
             loading="lazy"
             className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
@@ -87,7 +87,7 @@ export default function Services() {
       {/* Main Service Detailed: Procurement */}
       <section className="py-24 bg-primary text-white overflow-hidden relative border-b border-border">
         <div className="absolute right-0 top-0 w-1/2 h-full hidden lg:block opacity-20 mix-blend-luminosity">
-          <img src={brochure3} alt="Procurement Operations" className="w-full h-full object-cover" />
+          <img src={marineImg} alt="Marine logistics operation" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-primary" />
         </div>
         

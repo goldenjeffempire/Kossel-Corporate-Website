@@ -1,6 +1,6 @@
 import { Layers, Droplet, Nut, Shield, Zap } from "lucide-react";
 import productsImg from "@assets/generated_images/kossel-industrial-products_2.jpg";
-import brochure4 from "@assets/WhatsApp_Image_2026-08-26_at_9.26.46_AM_(2)_1787732941774.jpeg";
+import fittingsImg from "@assets/generated_images/valves-fittings.jpg";
 
 export default function Products() {
   const productCategories = [
@@ -91,7 +91,7 @@ export default function Products() {
             
             <div className="relative h-[400px] border-8 border-muted p-2 bg-white shadow-xl">
               <img 
-                src={brochure4} 
+                src={fittingsImg} 
                 alt="Product Catalogue" 
                 className="w-full h-full object-cover filter contrast-125"
               />
