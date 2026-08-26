@@ -9,28 +9,6 @@ args = ["pnpm", "store", "prune"]
 env = { "CI" = "true" }
 
 [workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Start Kossel website"
-
-[[workflows.workflow]]
-name = "Start Kossel website"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "PORT=25235 BASE_PATH=/ pnpm --filter @workspace/kossel-website run dev"
-waitForPort = 25235
-
-[workflows.workflow.metadata]
-outputType = "webview"
 
 [agent]
 stack = "PNPM_WORKSPACE"
