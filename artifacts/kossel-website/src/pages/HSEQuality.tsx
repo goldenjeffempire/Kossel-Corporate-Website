@@ -105,9 +105,6 @@ export default function HSEQuality() {
                 </p>
               </div>
               
-              <div className="bg-accent text-primary p-6 font-bold uppercase tracking-wider text-sm inline-block">
-                [CLIENT TO PROVIDE: Verification/Update of current ISO certification status if required.]
-              </div>
             </div>
 
             <div className="lg:col-span-5 order-1 lg:order-2">
