@@ -56,6 +56,8 @@ function absoluteUrl(path) {
 }
 
 function organizationSchema() {
+  const founderId = `${siteUrl}/#founder`;
+
   return {
     "@type": "Organization",
     "@id": `${siteUrl}/#organization`,
@@ -69,7 +71,20 @@ function organizationSchema() {
     image: `${siteUrl}${seoData.defaultImage}`,
     description: seoData.organization.description,
     email: `mailto:${seoData.organization.email}`,
+    foundingDate: seoData.organization.foundingDate,
+    founder: { "@id": founderId },
     areaServed: seoData.organization.areaServed
+  };
+}
+
+function founderSchema() {
+  return {
+    "@type": "Person",
+    "@id": `${siteUrl}/#founder`,
+    name: seoData.organization.founder.name,
+    jobTitle: seoData.organization.founder.jobTitle,
+    url: `${siteUrl}/about#leadership`,
+    worksFor: { "@id": `${siteUrl}/#organization` }
   };
 }
 
@@ -107,6 +122,7 @@ function schemaForRoute(route) {
   const breadcrumb = breadcrumbSchema(route);
   const graph = [
     organizationSchema(),
+    founderSchema(),
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
@@ -124,6 +140,14 @@ function schemaForRoute(route) {
       description: route.description,
       isPartOf: { "@id": `${siteUrl}/#website` },
       about: { "@id": `${siteUrl}/#organization` },
+      ...(route.path === "/about"
+        ? {
+            mainEntity: [
+              { "@id": `${siteUrl}/#organization` },
+              { "@id": `${siteUrl}/#founder` }
+            ]
+          }
+        : {}),
       primaryImageOfPage: `${siteUrl}${seoData.defaultImage}`,
       inLanguage: seoData.language
     }
@@ -166,7 +190,7 @@ function schemaForRoute(route) {
 function renderRoute(templateHtml, route) {
   const pageUrl = absoluteUrl(route.path);
   const imageUrl = `${siteUrl}${seoData.defaultImage}`;
-  const robots = "index, follow";
+  const robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
   let html = templateHtml
     .replace(/<title>[\s\S]*?<\/title>/i, "")
     .replace(/<meta\b[^>]*>/gi, (tag) => {

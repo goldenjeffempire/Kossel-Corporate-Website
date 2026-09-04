@@ -10,6 +10,11 @@
     "legalName": "Kossel Nigeria Limited",
     "description": "Industrial engineering, MRO, procurement and oilfield resources company serving operations in Nigeria and beyond.",
     "email": "info@kosselgroup.com",
+    "foundingDate": "2010-02-05",
+    "founder": {
+      "name": "Richard O. Akaighe",
+      "jobTitle": "CEO & Founder"
+    },
     "areaServed": [
       "Nigeria",
       "United Kingdom",
@@ -26,8 +31,8 @@
     },
     {
       "path": "/about",
-      "title": "About Kossel | Nigerian Oilfield Engineering Partner",
-      "description": "Learn about Kossel LTD., an indigenous Nigerian engineering and oilfield resources company serving industrial and energy operations across Africa.",
+      "title": "About Kossel & CEO Richard O. Akaighe | Nigeria",
+      "description": "Meet Richard O. Akaighe, CEO and Founder of Kossel LTD., and learn about the Nigerian engineering and oilfield company serving operations across Africa.",
       "imageAlt": "Kossel engineering team supporting industrial operations",
       "schemaType": "AboutPage"
     },

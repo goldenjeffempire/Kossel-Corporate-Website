@@ -106,6 +106,7 @@ function createBreadcrumb(path: string, canonicalUrl: string) {
 
 function createSchema(route: SeoRoute, canonicalUrl: string) {
   const organizationId = `${SITE_URL}/#organization`;
+  const founderId = `${SITE_URL}/#founder`;
   const websiteId = `${SITE_URL}/#website`;
   const graph: Record<string, unknown>[] = [
     {
@@ -121,7 +122,17 @@ function createSchema(route: SeoRoute, canonicalUrl: string) {
       image: `${SITE_URL}${OG_IMAGE_PATH}`,
       description: seoData.organization.description,
       email: `mailto:${seoData.organization.email}`,
+      foundingDate: seoData.organization.foundingDate,
+      founder: { "@id": founderId },
       areaServed: seoData.organization.areaServed,
+    },
+    {
+      "@type": "Person",
+      "@id": founderId,
+      name: seoData.organization.founder.name,
+      jobTitle: seoData.organization.founder.jobTitle,
+      url: `${SITE_URL}/about#leadership`,
+      worksFor: { "@id": organizationId },
     },
     {
       "@type": "WebSite",
@@ -140,6 +151,9 @@ function createSchema(route: SeoRoute, canonicalUrl: string) {
       description: route.description,
       isPartOf: { "@id": websiteId },
       about: { "@id": organizationId },
+      ...(route.path === "/about"
+        ? { mainEntity: [{ "@id": organizationId }, { "@id": founderId }] }
+        : {}),
       primaryImageOfPage: `${SITE_URL}${OG_IMAGE_PATH}`,
       inLanguage: seoData.language,
     },
@@ -191,7 +205,9 @@ export function SEO({
     const normalizedPath = normalizePath(path);
     const canonicalUrl = `${SITE_URL}${normalizedPath}`;
     const imageUrl = `${SITE_URL}${OG_IMAGE_PATH}`;
-    const robots = indexable ? "index, follow" : "noindex, nofollow";
+    const robots = indexable
+      ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      : "noindex, nofollow";
     const route =
       SEO_ROUTES.find((candidate) => candidate.path === normalizedPath) ||
       ({

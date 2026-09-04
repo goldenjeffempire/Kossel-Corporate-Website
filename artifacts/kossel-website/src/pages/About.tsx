@@ -12,8 +12,8 @@ export default function About() {
   return (
     <div className="flex flex-col bg-white">
       <SEO
-        title="About Kossel | Nigerian Oilfield Engineering Partner"
-        description="Learn about Kossel LTD., an indigenous Nigerian engineering and oilfield resources company serving industrial and energy operations across Africa."
+        title="About Kossel & CEO Richard O. Akaighe | Nigeria"
+        description="Meet Richard O. Akaighe, CEO and Founder of Kossel LTD., and learn about the Nigerian engineering and oilfield company serving operations across Africa."
         path="/about"
         imageAlt="Kossel engineering team supporting industrial operations"
       />
@@ -82,6 +82,42 @@ export default function About() {
             </div>
             
           </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section id="leadership" aria-labelledby="leadership-title" className="border-y border-border bg-muted py-20 md:py-28">
+        <div className="container mx-auto max-w-7xl px-4 md:px-8">
+          <article
+            itemScope
+            itemType="https://schema.org/Person"
+            className="grid overflow-hidden border border-border bg-white shadow-xl lg:grid-cols-12"
+          >
+            <div className="flex min-h-72 items-center justify-center bg-primary p-10 lg:col-span-4">
+              <div
+                aria-hidden="true"
+                className="flex h-44 w-44 items-center justify-center border-4 border-accent font-display text-6xl font-black tracking-tight text-white"
+              >
+                RA
+              </div>
+            </div>
+            <div className="flex flex-col justify-center p-8 md:p-12 lg:col-span-8 lg:p-16">
+              <p className="mb-4 font-display text-sm font-bold uppercase tracking-[0.24em] text-accent">
+                Executive Leadership
+              </p>
+              <h2 id="leadership-title" itemProp="name" className="font-display text-4xl font-black uppercase tracking-tight text-primary md:text-5xl">
+                Richard O. Akaighe
+              </h2>
+              <p itemProp="jobTitle" className="mt-3 font-display text-xl font-bold uppercase tracking-wider text-muted-foreground">
+                CEO &amp; Founder
+              </p>
+              <div className="my-8 h-1 w-24 bg-accent" />
+              <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                Richard O. Akaighe is the CEO and Founder of Kossel Nigeria Limited, leading the company&apos;s commitment to engineering, procurement, industrial MRO, and oilfield resource solutions.
+              </p>
+              <meta itemProp="worksFor" content="Kossel Nigeria Limited" />
+            </div>
+          </article>
         </div>
       </section>
 
