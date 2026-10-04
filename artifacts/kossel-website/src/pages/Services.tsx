@@ -3,6 +3,13 @@ import { SEO } from "@/components/SEO";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { imageSources } from "@/lib/images";
 import { CinematicVideo } from "@/components/CinematicVideo";
+import { ProcessFlow } from "@/components/ProcessFlow";
+import { MediaBand } from "@/components/MediaBand";
+import { imageSources as newImg } from "@/lib/images";
+
+const imgOffshore = newImg("kossel-offshore-operations.jpg");
+const posterOffshore = newImg("kossel-offshore-projects-poster.jpg");
+const offshoreVideo = `${import.meta.env.BASE_URL}videos/kossel-offshore-projects.mp4`;
 
 const teamImg = imageSources("kossel-african-engineering-team.jpg");
 const pipelineImg = imageSources("kossel-african-pipeline-team.jpg");
@@ -34,15 +41,14 @@ export default function Services() {
       {/* Header */}
       <section className="relative h-[60vh] min-h-[400px] flex items-end pb-16 md:pb-24 border-b-8 border-accent overflow-hidden">
         <div className="absolute inset-0 bg-primary">
-          <ResponsiveImage
-            sources={instrumentationImg}
-            alt="Kossel instrumentation engineer delivering industrial services"
-            width={1024}
-            height={1024}
-            loading="eager"
-            fetchPriority="high"
-            sizes="100vw"
-            className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+          <CinematicVideo
+            src={`${import.meta.env.BASE_URL}videos/kossel-engineering-services.mp4`}
+            poster={instrumentationImg.jpeg}
+            title="Illustrative engineering services footage"
+            description="Illustrative footage for Kossel LTD."
+            priority
+            className="h-full w-full"
+            videoClassName="opacity-50"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent" />
         </div>
@@ -56,6 +62,9 @@ export default function Services() {
           </p>
         </div>
       </section>
+
+      <ProcessFlow testPrefix="services-lifecycle" tone="dark" eyebrow="Delivery lifecycle" heading="From first drawing to site handover" steps={[{ title: "Design", text: "Engineering studies and P&ID development." },{ title: "Procure", text: "Materials sourced to specification." },{ title: "Mobilise", text: "Logistics, marine and haulage coordination." },{ title: "Install", text: "Construction and pipeline works." },{ title: "Maintain", text: "Inspection and ongoing maintenance support." }]} />
+
 
       <section className="bg-primary py-20 text-white">
         <div className="container mx-auto grid max-w-7xl items-center gap-10 px-4 md:px-8 lg:grid-cols-[0.8fr_1.2fr]">
@@ -165,6 +174,19 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <MediaBand
+        testId="services-offshore"
+        eyebrow="Offshore and marine"
+        heading="Support that reaches the platform"
+        text="From forged fittings to marine logistics, Kossel coordinates sourcing, freight and delivery for offshore and onshore operations. Footage is illustrative."
+        image={imgOffshore}
+        poster={posterOffshore}
+        alt="Illustrative offshore infrastructure at sea"
+        video={{ src: offshoreVideo, title: "Illustrative offshore operations", description: "Illustrative offshore infrastructure footage." }}
+        cta={{ label: "Request a quote", href: "/contact" }}
+      />
+
       
       {/* Operations Highlights */}
       <section className="border-t-8 border-accent">

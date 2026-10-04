@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { imageSources } from "@/lib/images";
+import { MediaBand } from "@/components/MediaBand";
+import { imageSources as newImg } from "@/lib/images";
+
+const imgOffshore = newImg("kossel-offshore-operations.jpg");
+const posterOffshore = newImg("kossel-offshore-projects-poster.jpg");
+const imgConsult = newImg("kossel-project-consultation.jpg");
+const offshoreVideo = `${import.meta.env.BASE_URL}videos/kossel-offshore-projects.mp4`;
 
 const pipelineImg = imageSources("kossel-african-pipeline-team.jpg");
 const engineeringImg = imageSources("kossel-african-design-engineers.jpg");
@@ -95,6 +102,17 @@ export default function Projects() {
         </div>
       </section>
 
+      <MediaBand
+        testId="projects-consult"
+        eyebrow="Engineering consultation"
+        heading="Plans reviewed with the people who build them"
+        text="Every scope starts with a conversation: drawings, constraints, site conditions and delivery dates agreed before material moves."
+        image={imgConsult}
+        alt="Nigerian engineers reviewing project plans together"
+        cta={{ label: "Discuss your scope", href: "/contact" }}
+      />
+
+
       {/* Decorative Band */}
       <div className="h-48 w-full bg-muted overflow-hidden relative border-b border-border">
         <div className="absolute inset-0 flex items-center justify-around opacity-30 grayscale mix-blend-multiply">
@@ -103,6 +121,10 @@ export default function Projects() {
             <ResponsiveImage sources={engineeringImg} alt="" aria-hidden="true" width={1024} height={1024} loading="lazy" sizes="50vw" className="h-[200%] w-auto object-cover transform rotate-6 hidden lg:block" />
         </div>
       </div>
+
+      <p className="bg-accent/10 px-4 py-3 text-center text-sm font-medium text-primary" data-testid="text-illustrative-note">
+        The projects below are illustrative examples of the work Kossel delivers, not named client engagements.
+      </p>
 
       {/* Filter and Grid */}
       <section className="py-24 flex-grow bg-white">
@@ -179,6 +201,19 @@ export default function Projects() {
           )}
         </div>
       </section>
+
+      <MediaBand
+        testId="projects-offshore"
+        eyebrow="Offshore and marine"
+        heading="Support that reaches the platform"
+        text="From forged fittings to marine logistics, Kossel coordinates sourcing, freight and delivery for offshore and onshore operations. Footage is illustrative."
+        image={imgOffshore}
+        poster={posterOffshore}
+        alt="Illustrative offshore infrastructure at sea"
+        video={{ src: offshoreVideo, title: "Illustrative offshore operations", description: "Illustrative offshore infrastructure footage." }}
+        cta={{ label: "Request a quote", href: "/contact" }}
+      />
+
     </div>
   );
 }

@@ -12,6 +12,8 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { ContactFab } from '@/components/layout/ContactFab';
 import { SiteAnalytics } from '@/components/SiteAnalytics';
+import { ScrollProgress } from '@/components/motion/ScrollProgress';
+import { PageEnhancer } from '@/components/motion/PageEnhancer';
 
 // Pages
 import Home from '@/pages/Home';
@@ -27,6 +29,8 @@ const queryClient = new QueryClient();
 function Router() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
+      <ScrollProgress />
+      <PageEnhancer />
       <Navbar />
       <main className="flex-grow pt-[84px] md:pt-[92px]">
         <RoutedErrorBoundary>

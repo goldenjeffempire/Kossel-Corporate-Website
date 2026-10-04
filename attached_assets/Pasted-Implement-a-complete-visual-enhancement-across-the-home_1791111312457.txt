@@ -1,0 +1,17 @@
+Implement a complete visual enhancement across the **homepage and every major page of the website**.
+
+* Add new, strategically designed sections where they improve the content, storytelling, user experience, and conversion flow.
+* Make every section **visually rich, modern, interactive, and professionally designed** rather than text-heavy.
+* Generate and integrate **high-quality custom videos, images, illustrations, graphics, and visual compositions** that are relevant to each section and the website’s brand.
+* Add **smooth, premium animations and micro-interactions** throughout the website, including scroll-based reveals, transitions, hover effects, image/video motion, animated backgrounds, counters, and interactive elements where appropriate.
+* Use **cinematic video content in hero sections and other high-impact areas** to create a strong first impression.
+* Ensure each page has its own relevant visual storytelling instead of repeating the same imagery or layouts.
+* Create interactive sections such as animated feature showcases, visual service/product presentations, process/workflow illustrations, statistics, testimonials, case studies, and technology/solution demonstrations where relevant.
+* Maintain a **premium, modern, highly polished visual hierarchy** with excellent spacing, typography, responsive layouts, and consistent branding.
+* Optimize all videos, images, animations, and interactive components for **fast loading and strong performance** without sacrificing visual quality.
+* Ensure everything works smoothly across **desktop, tablet, and mobile devices**.
+* Use subtle animations that enhance the experience without becoming distracting or excessive.
+* Do not use generic stock-looking visuals when custom visuals can better communicate the brand.
+* Ensure every visual element has a clear purpose and supports the page content, brand story, usability, or conversion.
+
+**Final objective:** transform the entire website into a **high-end, visually immersive, interactive digital experience** combining premium imagery, generated videos, illustrations, animations, motion design, and strong content structure—while maintaining excellent performance, accessibility, responsiveness, and usability.

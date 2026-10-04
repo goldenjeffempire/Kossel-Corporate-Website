@@ -3,6 +3,12 @@ import { SEO } from "@/components/SEO";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { imageSources } from "@/lib/images";
 import { CinematicVideo } from "@/components/CinematicVideo";
+import { Showcase } from "@/components/Showcase";
+import { ProcessFlow } from "@/components/ProcessFlow";
+import { MediaBand } from "@/components/MediaBand";
+import { imageSources as newImg } from "@/lib/images";
+
+const imgNetwork = newImg("kossel-global-network.jpg");
 
 const productsImg = imageSources("kossel-industrial-products_2.jpg");
 const fittingsImg = imageSources("valves-fittings.jpg");
@@ -88,15 +94,14 @@ export default function Products() {
       {/* Visual Header */}
       <section className="relative h-[60vh] min-h-[450px] flex items-end pb-16 md:pb-24 border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
-          <ResponsiveImage
-            sources={productsImg}
-            alt="Industrial MRO products and oilfield components inventory"
-            width={1024}
-            height={1024}
-            loading="eager"
-            fetchPriority="high"
-            sizes="100vw"
-            className="w-full h-full object-cover opacity-50 mix-blend-luminosity"
+          <CinematicVideo
+            src={`${import.meta.env.BASE_URL}videos/kossel-mro-products.mp4`}
+            poster={productsImg.jpeg}
+            title="Illustrative MRO products footage"
+            description="Illustrative footage for Kossel LTD."
+            priority
+            className="h-full w-full"
+            videoClassName="opacity-50"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent" />
         </div>
@@ -133,6 +138,20 @@ export default function Products() {
         </div>
       </section>
 
+      <Showcase
+        testPrefix="products-explorer"
+        eyebrow="Product explorer"
+        heading="See what we supply"
+        intro="Select a category for a closer look, then request a quote with your specification."
+        items={[
+          { id: "valves", label: "Valves", title: "Industrial valves", body: "Valves for isolation and control in oil, gas and process service.", points: ["Specification-led selection", "Documentation on request", "Global sourcing"], image: newImg("product-category-valves.jpg"), alt: "Industrial valves", href: "/contact", cta: "Request a quote" },
+          { id: "flanges", label: "Flanges", title: "Flanges", body: "Pipe flanges supplied to the standards your project specifies.", points: ["Multiple types and ratings", "Matched to piping class", "Project quantities"], image: newImg("product-category-flanges.jpg"), alt: "Flanges", href: "/contact", cta: "Request a quote" },
+          { id: "pipes", label: "Pipes", title: "Pipes", body: "Line pipe and tubing for installation and maintenance programmes.", points: ["Project and spares supply", "Freight coordination", "Site delivery"], image: newImg("product-category-pipes.jpg"), alt: "Industrial pipes", href: "/contact", cta: "Request a quote" },
+          { id: "pumps", label: "Pumps", title: "Pumps and chemicals", body: "Pumps and chemicals for process and maintenance needs.", points: ["Application-based advice", "Spares support", "Reliable lead times quoted per order"], image: newImg("product-category-pumps-chemicals.jpg"), alt: "Pumps and chemicals", href: "/contact", cta: "Request a quote" },
+        ]}
+      />
+
+
       {/* Featured Editorial Section */}
       <section className="py-24 bg-white border-b border-border">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
@@ -164,6 +183,11 @@ export default function Products() {
           </div>
         </div>
       </section>
+
+      <ProcessFlow testPrefix="products-rfq" tone="light" eyebrow="Request for quote" heading="How a quote moves" steps={[{ title: "Send", text: "Share your specification, quantity and location." },{ title: "Review", text: "We confirm requirements and alternatives." },{ title: "Quote", text: "You receive pricing and lead time." },{ title: "Deliver", text: "Material is sourced and shipped to site." }]} />
+
+      <MediaBand testId="products-global" eyebrow="Global sourcing" heading="A supply network behind every order" text="Kossel draws on worldwide suppliers while keeping communication, inspection and delivery coordinated from Nigeria." image={imgNetwork} alt="Abstract industrial supply network" cta={{ label: "Start an enquiry", href: "/contact" }} />
+
 
       {/* Product Grid */}
       <section className="py-24 bg-muted">

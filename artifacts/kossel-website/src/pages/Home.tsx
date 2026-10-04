@@ -1,10 +1,19 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Settings, Truck, ShieldCheck, Wrench } from "lucide-react";
+import { ArrowRight, Settings, Truck, ShieldCheck } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { imageSources } from "@/lib/images";
 import { CinematicVideo } from "@/components/CinematicVideo";
+import { Showcase } from "@/components/Showcase";
+import { MediaBand } from "@/components/MediaBand";
+import { NetworkGraphic } from "@/components/NetworkGraphic";
+import { Reveal } from "@/components/motion/Reveal";
+import { imageSources as newImg } from "@/lib/images";
+
+const imgOffshore = newImg("kossel-offshore-operations.jpg");
+const posterOffshore = newImg("kossel-offshore-projects-poster.jpg");
+const offshoreVideo = `${import.meta.env.BASE_URL}videos/kossel-offshore-projects.mp4`;
 
 const teamImg = imageSources("kossel-african-engineering-team.jpg");
 const pipelineImg = imageSources("kossel-african-pipeline-team.jpg");
@@ -75,6 +84,18 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="relative overflow-hidden bg-primary py-20 md:py-28 text-white">
+        <div className="container mx-auto grid max-w-7xl items-center gap-12 px-4 md:px-8 lg:grid-cols-2">
+          <Reveal>
+            <p className="mb-3 font-display text-sm font-bold uppercase tracking-widest text-accent">Local expertise, global reach</p>
+            <h2 className="mb-6 text-3xl md:text-5xl font-black text-white">Rooted in Nigeria. Connected to the world supply chain.</h2>
+            <p className="text-lg leading-relaxed text-white/75">Engineering, sourcing, logistics and HSE run as one system so buyers deal with a single accountable partner.</p>
+          </Reveal>
+          <Reveal from="right"><NetworkGraphic /></Reveal>
+        </div>
+      </section>
+
 
       {/* 2. Corporate Overview Snippet (Split Editorial) */}
       <section className="py-24 bg-white">
@@ -206,6 +227,32 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Showcase
+        testPrefix="home-capabilities"
+        eyebrow="Capabilities"
+        heading="One partner from drawing to delivery"
+        intro="Pick a capability to see how it connects to the rest of the work."
+        items={[
+          { id: "eng", label: "Engineering", title: "Engineering and design", body: "Civil, mechanical and electrical engineering, plus P&ID design, led by a Nigerian team.", points: ["P&ID and process studies", "Pipeline installation", "Facilities engineering"], image: imageSources("kossel-african-design-engineers.jpg"), alt: "Design engineers at work", href: "/services", cta: "View services" },
+          { id: "mro", label: "MRO supply", title: "MRO and industrial products", body: "Valves, flanges, pipes, fittings and instruments sourced for maintenance and projects.", points: ["Global sourcing", "Material documentation on request", "Emergency supply"], image: productsImg, alt: "Industrial MRO products", href: "/products", cta: "Browse products" },
+          { id: "marine", label: "Logistics", title: "Marine and bulk logistics", body: "Freight, marine support and bulk movement coordinated with the supply chain.", points: ["Marine logistics", "Bulk material movement", "Site delivery"], image: marineImg, alt: "Marine logistics team", href: "/services", cta: "View logistics" },
+          { id: "hse", label: "HSE", title: "Safety and quality built in", body: "HSE and quality practice applies to every scope, not only high-risk work.", points: ["HSE procedures", "Quality management", "Inspection support"], image: hseImg, alt: "HSE team", href: "/hse-quality", cta: "Our approach" },
+        ]}
+      />
+
+      <MediaBand
+        testId="home-offshore"
+        eyebrow="Offshore and marine"
+        heading="Support that reaches the platform"
+        text="From forged fittings to marine logistics, Kossel coordinates sourcing, freight and delivery for offshore and onshore operations. Footage is illustrative."
+        image={imgOffshore}
+        poster={posterOffshore}
+        alt="Illustrative offshore infrastructure at sea"
+        video={{ src: offshoreVideo, title: "Illustrative offshore operations", description: "Illustrative offshore infrastructure footage." }}
+        cta={{ label: "Request a quote", href: "/contact" }}
+      />
+
       
       {/* 5. Powerful CTA */}
       <section className="relative py-32 bg-primary text-white text-center border-t-8 border-accent overflow-hidden">

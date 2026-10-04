@@ -29,6 +29,20 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <>
       <header
@@ -57,8 +71,8 @@ export function Navbar() {
               <Link key={link.name} href={link.href}>
                 <span
                   className={cn(
-                    "px-4 py-2 text-sm font-semibold uppercase tracking-wider cursor-pointer transition-colors hover:text-accent relative",
-                    location === link.href ? "text-accent" : "text-primary"
+                    "px-4 py-2 text-sm font-semibold uppercase tracking-wider cursor-pointer transition-colors hover:text-accent relative after:absolute after:left-4 after:right-4 after:bottom-0.5 after:h-0.5 after:bg-accent after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100",
+                    location === link.href ? "text-accent after:scale-x-100" : "text-primary after:scale-x-0"
                   )}
                 >
                   {link.name}
@@ -78,6 +92,8 @@ export function Navbar() {
             className="lg:hidden p-2 text-primary"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -85,11 +101,10 @@ export function Navbar() {
       </header>
 
       {/* Mobile Menu */}
-      <div
-        className={cn(
-          "fixed inset-0 z-40 bg-primary transform transition-transform duration-300 ease-in-out flex flex-col pt-24",
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        )}
+      {mobileMenuOpen && <nav
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+        className="fixed inset-0 z-40 flex flex-col bg-primary pt-24 animate-in fade-in duration-300 lg:hidden"
       >
         <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col space-y-4">
           {navLinks.map((link) => (
@@ -124,7 +139,7 @@ export function Navbar() {
             </Button>
           </div>
         </div>
-      </div>
+      </nav>}
 
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </>

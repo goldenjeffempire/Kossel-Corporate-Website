@@ -2,6 +2,13 @@ import { ShieldCheck, Target, HeartHandshake, CheckCircle2 } from "lucide-react"
 import { SEO } from "@/components/SEO";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { imageSources } from "@/lib/images";
+import { ProcessFlow } from "@/components/ProcessFlow";
+import { MediaBand } from "@/components/MediaBand";
+import { imageSources as newImg } from "@/lib/images";
+
+const imgOffshore = newImg("kossel-offshore-operations.jpg");
+const posterSafety = newImg("kossel-safety-inspection-poster.jpg");
+const safetyVideo = `${import.meta.env.BASE_URL}videos/kossel-safety-inspection.mp4`;
 
 const hseImg = imageSources("kossel-african-hse-team.jpg");
 
@@ -39,6 +46,9 @@ export default function HSEQuality() {
           </p>
         </div>
       </section>
+
+      <MediaBand testId="hse-inspection" eyebrow="Safety in practice" heading="Inspect first. Work second." text="Safety checks are part of the job plan, not an afterthought. Footage is illustrative of an industrial inspection." image={imgOffshore} poster={posterSafety} alt="Illustrative industrial safety inspection" video={{ src: safetyVideo, title: "Illustrative industrial safety inspection", description: "Illustrative footage of an industrial safety inspection." }} />
+
 
       {/* Split Editorial: HSE Policy */}
       <section className="py-24 border-b border-border bg-white">
@@ -125,6 +135,9 @@ export default function HSEQuality() {
           </div>
         </div>
       </section>
+
+      <ProcessFlow testPrefix="hse-cycle" tone="light" eyebrow="Continuous improvement" heading="A repeating HSE and quality cycle" steps={[{ title: "Plan", text: "Define hazards, controls and quality checks." },{ title: "Brief", text: "Align the team before work begins." },{ title: "Inspect", text: "Check work and conditions against the plan." },{ title: "Correct", text: "Close out findings promptly." },{ title: "Review", text: "Feed lessons into the next scope." }]} />
+
 
       {/* Immersive Culture Image Band */}
       <section className="relative py-32 bg-primary text-white text-center overflow-hidden">

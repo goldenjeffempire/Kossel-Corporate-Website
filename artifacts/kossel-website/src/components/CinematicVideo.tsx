@@ -9,6 +9,7 @@ type CinematicVideoProps = {
   className?: string;
   videoClassName?: string;
   priority?: boolean;
+  webmSrc?: string;
 };
 
 function shouldAvoidAutoplay() {
@@ -34,6 +35,7 @@ export function CinematicVideo({
   className,
   videoClassName,
   priority = false,
+  webmSrc = src.replace(/\.mp4$/, ".webm"),
 }: CinematicVideoProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -41,6 +43,10 @@ export function CinematicVideo({
 
   useEffect(() => {
     if (priority || !wrapperRef.current) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setEnabled(true);
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -59,10 +65,12 @@ export function CinematicVideo({
     const video = videoRef.current;
     if (!enabled || !video || shouldAvoidAutoplay()) return;
 
+    // Refresh source selection when a lazy video receives its sources.
+    video.load();
     void video.play().catch(() => {
       // Keep the poster visible when the browser prevents autoplay.
     });
-  }, [enabled]);
+  }, [enabled, src, webmSrc]);
 
   return (
     <div ref={wrapperRef} className={cn("relative overflow-hidden bg-primary", className)}>
@@ -77,7 +85,12 @@ export function CinematicVideo({
         preload={priority ? "metadata" : "none"}
         aria-label={title}
       >
-        {enabled && <source src={src} type="video/mp4" />}
+        {enabled && (
+          <>
+            <source src={webmSrc} type="video/webm" />
+            <source src={src} type="video/mp4" />
+          </>
+        )}
         <p>{description}</p>
       </video>
     </div>

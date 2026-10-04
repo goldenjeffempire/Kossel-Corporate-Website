@@ -17,6 +17,11 @@ import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { imageSources } from "@/lib/images";
+import { ProcessFlow } from "@/components/ProcessFlow";
+import { MediaBand } from "@/components/MediaBand";
+import { imageSources as newImg } from "@/lib/images";
+
+const imgNetwork = newImg("kossel-global-network.jpg");
 
 const teamImg = imageSources("kossel-african-engineering-team.jpg");
 
@@ -105,6 +110,11 @@ export default function Contact() {
           </p>
         </div>
       </section>
+
+      <ProcessFlow testPrefix="contact-next" tone="light" eyebrow="What happens next" heading="After you reach out" steps={[{ title: "Message", text: "Tell us about your scope or product need." },{ title: "Review", text: "The team reads and routes it to the right lead." },{ title: "Respond", text: "We reply with questions or next steps." },{ title: "Quote", text: "Pricing and plan follow once details are clear." }]} />
+
+      <MediaBand testId="contact-global" eyebrow="Nigeria and beyond" heading="Wherever the work is" text="Based in Nigeria and sourcing globally, Kossel supports operations across Africa and further afield." image={imgNetwork} alt="Abstract industrial supply network" />
+
 
       {/* Main Content Layout */}
       <section className="py-24">

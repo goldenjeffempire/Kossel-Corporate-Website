@@ -147,3 +147,53 @@
     @apply font-display font-bold uppercase tracking-tight;
   }
 }
+
+/* ---- Visual enhancement layer ---- */
+/* Clip animated hero media at its section boundary, not the document edge. */
+main > div > section:first-of-type {
+  overflow: hidden;
+}
+
+.rv-pre {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.rv-pre.rv-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s ease-out var(--rv-delay, 0ms), transform 0.7s ease-out var(--rv-delay, 0ms);
+}
+
+/* Subtle engineering-grid texture on tinted and dark sections */
+main section.bg-muted {
+  background-image:
+    linear-gradient(hsl(222 47% 11% / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(222 47% 11% / 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+main section.bg-primary:not(.isolate) {
+  background-image: radial-gradient(ellipse at 85% 0%, hsl(25 95% 53% / 0.12), transparent 55%),
+    linear-gradient(hsl(0 0% 100% / 0.03) 1px, transparent 1px);
+  background-size: auto, 100% 56px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes kossel-drift {
+    from { transform: scale(1.08); }
+    to { transform: scale(1); }
+  }
+  main > div > section:first-of-type picture img {
+    animation: kossel-drift 18s ease-out both;
+  }
+  main section .grid > * picture img {
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  main section .grid > *:hover picture img {
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv-pre { opacity: 1 !important; transform: none !important; transition: none !important; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

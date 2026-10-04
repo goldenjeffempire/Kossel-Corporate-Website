@@ -1,9 +1,12 @@
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
 import { Crosshair } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { imageSources } from "@/lib/images";
+import { ProcessFlow } from "@/components/ProcessFlow";
+import { MediaBand } from "@/components/MediaBand";
+import { imageSources as newImg } from "@/lib/images";
+
+const imgConsult = newImg("kossel-project-consultation.jpg");
 
 const teamImg = imageSources("kossel-african-engineering-team.jpg");
 const engineeringImg = imageSources("kossel-african-design-engineers.jpg");
@@ -44,30 +47,50 @@ export default function About() {
       </section>
 
       {/* Company Overview (Editorial Split) */}
-      <section className="py-20 md:py-32">
+      <section id="overview" className="scroll-mt-28 py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             
             <div className="lg:col-span-7">
-              <h2 className="text-4xl font-display font-black uppercase tracking-tight text-primary mb-8 border-l-4 border-accent pl-6">Overview</h2>
-              <div className="prose max-w-none text-muted-foreground text-lg space-y-6">
-                <p>
-                  Kossel Nigeria Limited is an indigenous company with a 100% Nigerian workforce. Our team has been fully engaged in the supply of industrial MRO (Maintenance, Repair, and Operations) and safety products to some multinational companies like CHEVRON, SGC (KBR), REFINERIES (Warri & Port Harcourt), NPDC, SHELL, MOBIL, etc.
+              <h2 className="text-3xl md:text-4xl font-display font-black uppercase tracking-tight text-primary mb-6 border-l-4 border-accent pl-5">Overview</h2>
+              <div className="max-w-[65ch] text-lg leading-[1.8] text-primary/90">
+                <p className="mb-8 text-xl leading-relaxed font-medium text-primary">
+                  Kossel Nigeria Limited is an indigenous engineering and industrial supply company with a 100% Nigerian workforce.
                 </p>
-                <p>
-                  The company was incorporated in February 5, 2010. The Company was further incorporated into the UK and USA Allied companies as Kossel Engineering (UK) Limited and Kossel Global Group (KGG) respectively, in order to cover the required needs of her customers. 
-                </p>
-                <p className="font-bold text-primary bg-muted p-6 border-l-4 border-primary">
-                  It has a staff strength of 20 and is a member of NUSA.
-                </p>
-                <p>
-                  The birth of the Company was based on the need to provide quality services to the oil and gas industry and in the process ensure human capacity development as propagated by the Federal Government of Nigeria. Kossel Nigeria Limited aims to be a leading oil and gas service provider in Nigeria specifically and Sub-Saharan Africa.
-                </p>
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="mb-3 text-xl font-semibold normal-case tracking-normal">What we do</h3>
+                    <p>
+                      We supply industrial MRO (Maintenance, Repair and Operations) materials and safety products to multinational companies.
+                    </p>
+                    <p className="mt-3">
+                      These include Chevron, SGC (KBR), the Warri and Port Harcourt refineries, NPDC, Shell and Mobil.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="mb-3 text-xl font-semibold normal-case tracking-normal">Our company</h3>
+                    <p>
+                      Incorporated on 5 February 2010, Kossel expanded through allied companies in the UK and USA: Kossel Engineering (UK) Limited and Kossel Global Group (KGG).
+                    </p>
+                    <p className="mt-3">
+                      Our team has 20 staff members, and the company is a member of NUSA.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="mb-3 text-xl font-semibold normal-case tracking-normal">Our purpose</h3>
+                    <p>
+                      We were established to provide quality services to the oil and gas industry while developing local skills, in line with the Federal Government of Nigeria’s focus on human capacity development.
+                    </p>
+                    <p className="mt-3">
+                      Our ambition is to become a leading oil and gas service provider in Nigeria and across Sub-Saharan Africa.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             
-            <div className="lg:col-span-5">
-              <div className="relative p-2 bg-white border border-border shadow-xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
+              <div className="relative p-2 bg-white border border-border shadow-xl">
                 <ResponsiveImage
                   sources={engineeringImg}
                   alt="Kossel engineering design capability for oilfield and industrial projects"
@@ -77,13 +100,28 @@ export default function About() {
                   sizes="(min-width: 1024px) 42vw, 100vw"
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-accent z-[-1]" />
               </div>
             </div>
             
           </div>
         </div>
       </section>
+
+      <ProcessFlow
+        testPrefix="about-method"
+        tone="light"
+        layout="cards"
+        eyebrow="How we work"
+        heading="From your requirements to delivery"
+        steps={[
+          { title: "Understand", text: "We clarify what you need, the conditions on site and the outcome you want to achieve." },
+          { title: "Specify", text: "We turn those requirements into clear drawings, material lists and practical plans." },
+          { title: "Source", text: "We source materials locally or globally to match the agreed specifications." },
+          { title: "Deliver", text: "We coordinate delivery, installation and commissioning with health, safety and environmental controls in place." },
+          { title: "Support", text: "We remain available for maintenance, follow-up questions and ongoing operational needs." },
+        ]}
+      />
+
 
       {/* Leadership */}
       <section id="leadership" aria-labelledby="leadership-title" className="border-y border-border bg-muted py-20 md:py-28">
@@ -120,6 +158,17 @@ export default function About() {
           </article>
         </div>
       </section>
+
+      <MediaBand
+        testId="about-consult"
+        eyebrow="Engineering consultation"
+        heading="Plans reviewed with the people who build them"
+        text="Every scope starts with a conversation: drawings, constraints, site conditions and delivery dates agreed before material moves."
+        image={imgConsult}
+        alt="Nigerian engineers reviewing project plans together"
+        cta={{ label: "Discuss your scope", href: "/contact" }}
+      />
+
 
       {/* Philosophy Section */}
       <section className="bg-primary py-20 text-white md:py-28">

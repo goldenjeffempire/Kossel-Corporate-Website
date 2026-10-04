@@ -1,1 +1,3 @@
 - [Imported artifact preview routing](imported-artifact-preview-routing.md) — imported artifact manifests can route the proxy even when no artifact is registered in the workspace.
+- [Video presentation](video-presentation.md) — the user requires all website videos to remain free of playback control badges.
+- [Homepage statistics](homepage-statistics.md) — the user requires the year, workforce and country-count statistics section to stay off the homepage.
