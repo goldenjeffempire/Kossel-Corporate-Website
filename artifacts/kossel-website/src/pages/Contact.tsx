@@ -61,7 +61,7 @@ export default function Contact() {
       country: "Nigeria",
       entity: "Kossel Nigeria Limited",
       address: "Plot 320 DDPA Housing Estate\nJeddo, Delta State",
-      phones: ["+234 803 096 7258", "+234 703 436 0560"],
+      phones: ["+234 803 096 7258"],
     },
     {
       country: "United Kingdom",

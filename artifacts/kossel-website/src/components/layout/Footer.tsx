@@ -62,7 +62,6 @@ export function Footer() {
                   <div className="mt-2 text-white">
                     <a href={KOSSEL_CALL_URL} className="block hover:text-accent transition-colors">{KOSSEL_PHONE_DISPLAY}</a>
                     <a href={KOSSEL_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="block text-accent hover:text-white transition-colors">Chat on WhatsApp</a>
-                    +234 703 436 0560
                   </div>
                 </address>
               </div>
