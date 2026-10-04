@@ -40,7 +40,6 @@ export default function Home() {
             title="Illustrative industrial pipeline operations"
             description="Illustrative footage of a professional pipeline worksite."
             priority
-            showPlaybackBadge={false}
             className="h-full w-full"
             videoClassName="scale-105 opacity-70"
           />

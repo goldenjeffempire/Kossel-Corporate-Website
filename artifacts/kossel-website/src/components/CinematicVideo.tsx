@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Pause, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type CinematicVideoProps = {
@@ -10,8 +9,6 @@ type CinematicVideoProps = {
   className?: string;
   videoClassName?: string;
   priority?: boolean;
-  controls?: boolean;
-  showPlaybackBadge?: boolean;
 };
 
 function shouldAvoidAutoplay() {
@@ -37,13 +34,10 @@ export function CinematicVideo({
   className,
   videoClassName,
   priority = false,
-  controls = false,
-  showPlaybackBadge = true,
 }: CinematicVideoProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [enabled, setEnabled] = useState(priority);
-  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     if (priority || !wrapperRef.current) return;
@@ -65,15 +59,10 @@ export function CinematicVideo({
     const video = videoRef.current;
     if (!enabled || !video || shouldAvoidAutoplay()) return;
 
-    void video.play().catch(() => setPlaying(false));
+    void video.play().catch(() => {
+      // Keep the poster visible when the browser prevents autoplay.
+    });
   }, [enabled]);
-
-  function togglePlayback() {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) void video.play();
-    else video.pause();
-  }
 
   return (
     <div ref={wrapperRef} className={cn("relative overflow-hidden bg-primary", className)}>
@@ -84,25 +73,13 @@ export function CinematicVideo({
         muted
         loop
         playsInline
-        controls={controls}
+        controls={false}
         preload={priority ? "metadata" : "none"}
         aria-label={title}
-        onPlay={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
       >
         {enabled && <source src={src} type="video/mp4" />}
         <p>{description}</p>
       </video>
-      {!controls && showPlaybackBadge && (
-        <button
-          type="button"
-          onClick={togglePlayback}
-          className="absolute bottom-4 right-4 z-20 grid h-11 w-11 place-items-center border border-white/70 bg-primary/75 text-white backdrop-blur-sm transition hover:bg-accent hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-          aria-label={playing ? `Pause ${title}` : `Play ${title}`}
-        >
-          {playing ? <Pause size={18} fill="currentColor" /> : <Play size={18} fill="currentColor" />}
-        </button>
-      )}
     </div>
   );
 }
