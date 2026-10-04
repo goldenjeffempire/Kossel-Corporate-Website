@@ -48,8 +48,8 @@ function Router() {
           </Suspense>
         </RoutedErrorBoundary>
       </main>
-      <Footer />
       <ContactFab />
+      <Footer />
     </div>
   );
 }

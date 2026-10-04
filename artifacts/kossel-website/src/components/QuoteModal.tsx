@@ -34,7 +34,7 @@ const quoteSchema = z.object({
   company: z.string().min(2, "Company name is required"),
   email: z.string().email("Invalid email address"),
   phone: z.string().optional(),
-  interest: z.string({ required_error: "Please select an area of interest" }),
+  interest: z.string().min(1, "Please select an area of interest"),
   message: z.string().min(10, "Please provide some details about your request"),
 });
 
@@ -80,7 +80,7 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] p-0 overflow-hidden border-t-4 border-t-accent rounded-none">
+      <DialogContent className="w-[calc(100%-2rem)] sm:max-w-[600px] max-h-[calc(100dvh-2rem)] p-0 overflow-x-hidden overflow-y-auto overscroll-contain border-t-4 border-t-accent rounded-none">
         {submitted ? (
           <div className="p-12 flex flex-col items-center justify-center text-center space-y-4">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 text-green-600">
@@ -93,7 +93,7 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
           </div>
         ) : (
           <div className="p-6 md:p-8">
-            <DialogHeader className="mb-6">
+            <DialogHeader className="mb-6 pr-9">
               <DialogTitle className="text-2xl font-display font-black uppercase text-primary">Request a Quote</DialogTitle>
               <DialogDescription className="text-base text-muted-foreground">
                 Provide details about your project or procurement needs, and our team will get back to you with a comprehensive proposal.

@@ -29,10 +29,10 @@ export function ProcessFlow({ eyebrow, heading, steps, tone = "light", testPrefi
         </Reveal>
 
         <div className="relative">
-          {!cards && <div aria-hidden="true" className={cn("absolute left-0 right-0 top-6 hidden h-0.5 md:block", dark ? "bg-white/15" : "bg-border")}>
+          {!cards && <div aria-hidden="true" className={cn("absolute left-0 right-0 top-6 hidden h-0.5 lg:block", dark ? "bg-white/15" : "bg-border")}>
             <div className="h-full bg-accent transition-[width] duration-500 ease-out" style={{ width: `${pct}%` }} />
           </div>}
-          <ol className={cn("grid gap-4", cards ? "sm:grid-cols-2 xl:grid-cols-3 gap-6" : "md:grid-flow-col md:auto-cols-fr")}>
+          <ol className={cn("grid gap-4", cards ? "sm:grid-cols-2 xl:grid-cols-3 gap-6" : "sm:grid-cols-2 lg:grid-cols-none lg:grid-flow-col lg:auto-cols-fr")}>
             {steps.map((s, i) => (
               <li key={s.title}>
                 <button
@@ -45,8 +45,8 @@ export function ProcessFlow({ eyebrow, heading, steps, tone = "light", testPrefi
                   className={cn(
                     "group relative flex w-full gap-4 text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent",
                     cards
-                      ? cn("h-full border p-6 md:p-8 transition-colors", dark ? "bg-primary" : "bg-white", i === active ? "border-accent" : "border-border")
-                      : "md:block md:pr-4",
+                      ? cn("h-full border p-4 sm:p-6 xl:p-8 transition-colors", dark ? "bg-primary" : "bg-white", i === active ? "border-accent" : "border-border")
+                      : "lg:block lg:pr-4",
                   )}
                 >
                   <span
@@ -61,7 +61,7 @@ export function ProcessFlow({ eyebrow, heading, steps, tone = "light", testPrefi
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className={cards ? "min-w-0" : "md:mt-5 md:block"}>
+                  <span className={cards ? "min-w-0" : "min-w-0 lg:mt-5 lg:block"}>
                     <span className={cn("block font-display text-lg font-black uppercase tracking-tight", dark ? "text-white" : "text-primary")}>
                       {s.title}
                     </span>

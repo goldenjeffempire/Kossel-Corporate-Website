@@ -125,10 +125,37 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    min-width: 0;
   }
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  .grid > * {
+    min-width: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, li, address {
+    overflow-wrap: anywhere;
+  }
+
+  input, textarea, select {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 3px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -152,6 +179,65 @@
 /* Clip animated hero media at its section boundary, not the document edge. */
 main > div > section:first-of-type {
   overflow: hidden;
+}
+
+/* Content-driven heroes work in portrait, landscape and large-screen layouts. */
+main > div > section:first-of-type:not(.home-hero) {
+  height: auto;
+  min-height: clamp(26rem, 60svh, 48rem);
+  padding-top: 4rem;
+}
+
+.home-hero {
+  min-height: clamp(40rem, 90svh, 56rem);
+  padding-block: 4rem;
+}
+
+main > div > section:first-of-type h1 {
+  font-size: clamp(2.25rem, 1rem + 4.5vw, 4.5rem);
+  line-height: 1.05;
+}
+
+main > div > .home-hero h1 {
+  font-size: clamp(2.5rem, 1rem + 5vw, 6rem);
+  line-height: 1;
+}
+
+@media (max-width: 639px) {
+  main h2.text-4xl, main h3.text-4xl {
+    font-size: clamp(1.75rem, 7.5vw, 2.25rem);
+  }
+
+  main section.py-24, main section.py-32 {
+    padding-block: 3.5rem;
+  }
+}
+
+@media (max-width: 767px), (pointer: coarse) {
+  /* Avoid iOS focus zoom; form fields remain readable without pinching. */
+  input, textarea, [role="combobox"] {
+    font-size: 16px !important;
+    min-height: 44px;
+  }
+}
+
+@media (pointer: coarse) {
+  footer a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  [role="option"] {
+    min-height: 44px;
+  }
+}
+
+@media (hover: none) {
+  .responsive-gallery .group img {
+    filter: none;
+    opacity: 1;
+  }
 }
 
 .rv-pre {

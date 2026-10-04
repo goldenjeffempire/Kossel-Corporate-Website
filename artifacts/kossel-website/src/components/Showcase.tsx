@@ -58,7 +58,7 @@ export function Showcase({ eyebrow, heading, intro, items, tone = "light", testP
           )}
         </Reveal>
 
-        <div role="tablist" aria-label={eyebrow} className="mb-8 flex gap-2 overflow-x-auto pb-2">
+        <div role="tablist" aria-label={eyebrow} className="mb-8 flex flex-wrap gap-2 pb-2">
           {items.map((it, i) => (
             <button
               key={it.id}
@@ -72,7 +72,7 @@ export function Showcase({ eyebrow, heading, intro, items, tone = "light", testP
               data-testid={`tab-${testPrefix}-${it.id}`}
               onClick={() => setActive(i)}
               className={cn(
-                "shrink-0 border-b-4 outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 px-5 py-3 font-display text-sm font-bold uppercase tracking-widest transition-colors",
+                "max-w-full min-h-11 border-b-4 outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 px-4 py-3 text-left font-display text-sm font-bold uppercase tracking-widest transition-colors",
                 i === active
                   ? "border-accent " + (dark ? "text-white" : "text-primary")
                   : "border-transparent " + (dark ? "text-white/50 hover:text-white" : "text-muted-foreground hover:text-primary"),
@@ -102,7 +102,7 @@ export function Showcase({ eyebrow, heading, intro, items, tone = "light", testP
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
           </div>
-          <div className={cn("p-8 md:p-12 lg:col-span-5 border-l-8 border-accent", dark ? "bg-white/5" : "bg-white")}>
+          <div className={cn("p-5 sm:p-8 xl:p-12 lg:col-span-5 border-l-8 border-accent", dark ? "bg-white/5" : "bg-white")}>
             <h3 className={cn("mb-4 text-2xl md:text-3xl font-black", dark ? "text-white" : "text-primary")}>{current.title}</h3>
             <p className={cn("mb-6 leading-relaxed", dark ? "text-white/75" : "text-muted-foreground")}>{current.body}</p>
             <ul className="mb-8 space-y-3">

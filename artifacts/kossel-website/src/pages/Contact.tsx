@@ -119,7 +119,7 @@ export default function Contact() {
       {/* Main Content Layout */}
       <section className="py-24">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-8 xl:gap-x-12">
             
             {/* Form Section */}
             <div className="lg:col-span-7 order-2 lg:order-1">
@@ -128,7 +128,7 @@ export default function Contact() {
               </h2>
               
               {submitted ? (
-                <div className="bg-muted p-12 md:p-16 border border-border text-center">
+                <div className="bg-muted p-6 sm:p-10 xl:p-16 border border-border text-center">
                   <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 text-green-600">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
@@ -141,7 +141,7 @@ export default function Contact() {
                   </Button>
                 </div>
               ) : (
-                <div className="bg-white border-2 border-border p-8 md:p-12 shadow-sm">
+                <div className="bg-white border-2 border-border p-4 sm:p-8 xl:p-12 shadow-sm">
                   <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -222,16 +222,16 @@ export default function Contact() {
 
             {/* Offices Section */}
             <div className="lg:col-span-5 order-1 lg:order-2">
-              <div className="bg-muted p-10 md:p-12 border-t-8 border-accent sticky top-32">
+              <div className="bg-muted p-6 sm:p-10 xl:p-12 border-t-8 border-accent lg:sticky lg:top-32">
                 <h2 className="text-3xl font-display font-black uppercase tracking-tight text-primary mb-10">
                   Global Directory
                 </h2>
                 
                 <div className="space-y-10">
                   {offices.map((office, i) => (
-                    <div key={i} className="flex gap-6 pb-10 border-b border-border last:border-0 last:pb-0">
+                    <div key={i} className="flex gap-3 sm:gap-6 pb-10 border-b border-border last:border-0 last:pb-0">
                       <MapPin className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
-                      <div>
+                      <div className="min-w-0">
                         <h3 className="text-2xl font-display font-bold uppercase tracking-tight text-primary mb-1">
                           {office.country}
                         </h3>
@@ -255,9 +255,9 @@ export default function Contact() {
                     </div>
                   ))}
 
-                  <div className="flex gap-6 pt-6 bg-primary text-white p-8 -mx-10 md:-mx-12 -mb-10 md:-mb-12 mt-10">
+                  <div className="flex flex-col sm:flex-row gap-4 bg-primary text-white p-6 sm:p-8 -mx-6 sm:-mx-10 xl:-mx-12 -mb-6 sm:-mb-10 xl:-mb-12 mt-10">
                     <Mail className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
-                    <div>
+                    <div className="min-w-0 break-words">
                       <h3 className="text-2xl font-display font-bold uppercase tracking-tight mb-4">
                         Email Desk
                       </h3>

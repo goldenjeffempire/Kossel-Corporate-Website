@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { QuoteModal } from "@/components/QuoteModal";
 
 const navLinks = [
@@ -20,6 +20,17 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const menuRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1280px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setMobileMenuOpen(false);
+    };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,13 +44,27 @@ export function Navbar() {
     if (!mobileMenuOpen) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    const frame = requestAnimationFrame(() => menuRef.current?.querySelector<HTMLAnchorElement>("a")?.focus());
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setMobileMenuOpen(false);
+      if (event.key !== "Tab") return;
+      const controls = Array.from(menuRef.current?.querySelectorAll<HTMLElement>("a, button") ?? []);
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => {
       document.body.style.overflow = previousOverflow;
+      cancelAnimationFrame(frame);
       window.removeEventListener("keydown", onKeyDown);
+      if (window.innerWidth < 1280) toggleRef.current?.focus({ preventScroll: true });
     };
   }, [mobileMenuOpen]);
 
@@ -66,12 +91,12 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav aria-label="Main navigation" className="hidden xl:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href}>
                 <span
                   className={cn(
-                    "px-4 py-2 text-sm font-semibold uppercase tracking-wider cursor-pointer transition-colors hover:text-accent relative after:absolute after:left-4 after:right-4 after:bottom-0.5 after:h-0.5 after:bg-accent after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100",
+                    "px-3 py-3 text-sm font-semibold uppercase tracking-wider cursor-pointer transition-colors hover:text-accent relative after:absolute after:left-3 after:right-3 after:bottom-0.5 after:h-0.5 after:bg-accent after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100",
                     location === link.href ? "text-accent after:scale-x-100" : "text-primary after:scale-x-0"
                   )}
                 >
@@ -81,7 +106,7 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center">
+          <div className="hidden xl:flex items-center">
             <Button variant="accent" onClick={() => setQuoteModalOpen(true)}>
               Request Quote
             </Button>
@@ -89,7 +114,8 @@ export function Navbar() {
 
           {/* Mobile Toggle */}
           <button
-            className="lg:hidden p-2 text-primary"
+            ref={toggleRef}
+            className="xl:hidden p-2 text-primary"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
@@ -102,11 +128,12 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && <nav
+        ref={menuRef}
         id="mobile-navigation"
         aria-label="Mobile navigation"
-        className="fixed inset-0 z-40 flex flex-col bg-primary pt-24 animate-in fade-in duration-300 lg:hidden"
+        className="fixed inset-0 z-40 flex flex-col bg-primary pt-24 animate-in fade-in duration-300 xl:hidden"
       >
-        <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col space-y-4">
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 py-5 pb-[max(2rem,env(safe-area-inset-bottom))] flex flex-col space-y-4">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href}>
               <div

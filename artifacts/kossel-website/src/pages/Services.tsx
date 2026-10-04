@@ -192,7 +192,7 @@ export default function Services() {
       <section className="border-t-8 border-accent">
         <div className="grid grid-cols-1 md:grid-cols-2">
           
-          <div className="bg-white p-16 md:p-24 flex flex-col justify-center">
+          <div className="bg-white p-6 sm:p-10 lg:p-16 xl:p-24 flex flex-col justify-center">
             <Anchor className="w-16 h-16 text-accent mb-8" />
             <h3 className="text-4xl font-display font-black uppercase tracking-tight text-primary mb-6">Marine Logistics & Haulage</h3>
             <p className="text-muted-foreground text-xl leading-relaxed mb-0">

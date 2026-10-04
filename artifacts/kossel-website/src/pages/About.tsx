@@ -248,13 +248,13 @@ export default function About() {
       <section className="py-24 bg-muted border-t border-border">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl text-center">
           <h2 className="text-4xl md:text-5xl font-display font-black uppercase tracking-tight text-primary mb-16">Global Operations</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { country: "Nigeria", entity: "Kossel Nigeria Limited", role: "Headquarters & Operations" },
               { country: "United Kingdom", entity: "Kossel Engineering (UK) Limited", role: "European Procurement Hub" },
               { country: "United States", entity: "Kossel Global Group Inc.", role: "Americas Operations" }
             ].map((loc, i) => (
-              <div key={i} className="bg-white p-10 border border-border shadow-sm hover:border-accent transition-colors group">
+              <div key={i} className="bg-white p-6 xl:p-10 border border-border shadow-sm hover:border-accent transition-colors group">
                 <Crosshair className="w-12 h-12 text-muted-foreground mx-auto mb-8 group-hover:text-accent transition-colors" />
                 <h3 className="text-3xl font-display font-black text-primary uppercase tracking-tight mb-4 group-hover:text-accent transition-colors">{loc.country}</h3>
                 <p className="font-bold text-primary mb-3 text-lg">{loc.entity}</p>

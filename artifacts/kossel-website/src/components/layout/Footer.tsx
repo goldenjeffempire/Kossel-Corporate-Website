@@ -94,7 +94,7 @@ export function Footer() {
 
               <div>
                 <h5 className="font-bold text-white mb-2 uppercase text-xs tracking-widest text-accent">Contact</h5>
-                <div className="text-white/70 space-y-1">
+                <div className="text-white/70 space-y-1 break-words">
                   info@kosselgroup.com<br />
                   kosselengineering@yahoo.com<br />
                   r.akaighe@kosselgroup.com
@@ -107,7 +107,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/50 uppercase tracking-wider font-semibold">
           <p>&copy; {new Date().getFullYear()} Kossel LTD. All Rights Reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-4 md:mt-0">
             <Link href="/hse-quality"><span className="hover:text-white cursor-pointer">HSE Policy</span></Link>
             <Link href="/hse-quality"><span className="hover:text-white cursor-pointer">Quality Management</span></Link>
           </div>

@@ -41,7 +41,7 @@ export default function Home() {
         imageAlt="Kossel LTD. pipeline installation and industrial engineering operations"
       />
       {/* 1. Hero Section (Visual Transformation) */}
-      <section className="relative h-[90vh] min-h-[700px] flex items-center justify-center overflow-hidden border-b-8 border-accent">
+      <section className="home-hero relative flex items-center justify-center overflow-hidden border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
           <CinematicVideo
             src={`${import.meta.env.BASE_URL}videos/kossel-pipeline-hero.mp4`}
@@ -161,17 +161,17 @@ export default function Home() {
           <div className="w-16 h-1 bg-accent mx-auto mt-6" />
         </div>
         
-        {/* Horizontal scrollable / tight grid of images */}
-        <div className="flex gap-4 px-4 overflow-x-auto pb-8 snap-x snap-mandatory">
+        {/* Responsive gallery keeps every image available without horizontal scrolling. */}
+        <div className="responsive-gallery container mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-8 pb-8">
           {galleryImages.map(({ src, alt }, idx) => (
-            <div key={idx} className="relative flex-none w-[80vw] md:w-[400px] h-[300px] snap-center group">
+            <div key={idx} className="relative aspect-[4/3] overflow-hidden group">
               <ResponsiveImage
                 sources={src}
                 alt={alt}
                 width={1024}
                 height={1024}
                 loading="lazy"
-                sizes="(min-width: 768px) 400px, 80vw"
+                sizes="(min-width: 1280px) 400px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 border border-white/10"
               />
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent transition-colors duration-500" />
@@ -187,7 +187,7 @@ export default function Home() {
           <div className="relative h-[400px] md:h-auto">
             <ResponsiveImage sources={teamImg} alt="Engineering design team developing industrial project solutions" width={1024} height={1024} loading="lazy" sizes="(min-width: 768px) 50vw, 100vw" className="absolute inset-0 w-full h-full object-cover" />
           </div>
-          <div className="bg-muted p-12 md:p-24 flex flex-col justify-center border-l-4 border-accent">
+          <div className="bg-muted p-6 sm:p-10 lg:p-16 xl:p-24 flex flex-col justify-center border-l-4 border-accent">
             <Settings className="w-12 h-12 text-primary mb-6" />
             <h3 className="text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-primary mb-6">Engineering Design</h3>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
@@ -199,7 +199,7 @@ export default function Home() {
 
         {/* Block 2: Procurement */}
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="bg-primary p-12 md:p-24 flex flex-col justify-center order-2 md:order-1 text-white border-r-4 border-accent">
+          <div className="bg-primary p-6 sm:p-10 lg:p-16 xl:p-24 flex flex-col justify-center order-2 md:order-1 text-white border-r-4 border-accent">
             <Truck className="w-12 h-12 text-accent mb-6" />
             <h3 className="text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-white mb-6">Procurement & Logistics</h3>
             <p className="text-white/70 text-lg mb-8 leading-relaxed">
@@ -217,7 +217,7 @@ export default function Home() {
           <div className="relative h-[400px] md:h-auto">
             <ResponsiveImage sources={hseImg} alt="HSE inspection and safety management in industrial operations" width={1024} height={1024} loading="lazy" sizes="(min-width: 768px) 50vw, 100vw" className="absolute inset-0 w-full h-full object-cover" />
           </div>
-          <div className="bg-muted p-12 md:p-24 flex flex-col justify-center border-l-4 border-accent">
+          <div className="bg-muted p-6 sm:p-10 lg:p-16 xl:p-24 flex flex-col justify-center border-l-4 border-accent">
             <ShieldCheck className="w-12 h-12 text-primary mb-6" />
             <h3 className="text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-primary mb-6">HSE & Quality Control</h3>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
