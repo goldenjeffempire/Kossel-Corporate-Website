@@ -40,6 +40,7 @@ export default function Home() {
             title="Illustrative industrial pipeline operations"
             description="Illustrative footage of a professional pipeline worksite."
             priority
+            showPlaybackBadge={false}
             className="h-full w-full"
             videoClassName="scale-105 opacity-70"
           />
@@ -73,13 +74,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-primary py-5 text-white" aria-label="Video context">
-        <div className="container mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-white/65 md:px-8">
-          <span>Illustrative capability film</span>
-          <span className="hidden sm:inline">Muted · Looping · Reduced-motion aware</span>
         </div>
       </section>
 

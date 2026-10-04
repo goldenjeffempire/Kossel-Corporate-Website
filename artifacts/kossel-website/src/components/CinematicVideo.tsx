@@ -11,6 +11,7 @@ type CinematicVideoProps = {
   videoClassName?: string;
   priority?: boolean;
   controls?: boolean;
+  showPlaybackBadge?: boolean;
 };
 
 function shouldAvoidAutoplay() {
@@ -37,6 +38,7 @@ export function CinematicVideo({
   videoClassName,
   priority = false,
   controls = false,
+  showPlaybackBadge = true,
 }: CinematicVideoProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -91,7 +93,7 @@ export function CinematicVideo({
         {enabled && <source src={src} type="video/mp4" />}
         <p>{description}</p>
       </video>
-      {!controls && (
+      {!controls && showPlaybackBadge && (
         <button
           type="button"
           onClick={togglePlayback}
