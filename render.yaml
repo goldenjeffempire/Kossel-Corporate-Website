@@ -5,6 +5,7 @@ services:
   - type: web
     runtime: static
     name: kossel-ltd-website
+    domains: []
     buildCommand: pnpm install --frozen-lockfile && PORT=10000 BASE_PATH=/ pnpm --filter @workspace/kossel-website run build
     staticPublishPath: artifacts/kossel-website/dist/public
     autoDeployTrigger: commit
