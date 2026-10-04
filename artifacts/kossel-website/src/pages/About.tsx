@@ -10,6 +10,7 @@ const imgConsult = newImg("kossel-project-consultation.jpg");
 
 const teamImg = imageSources("kossel-african-engineering-team.jpg");
 const engineeringImg = imageSources("kossel-african-design-engineers.jpg");
+const overviewBackground = imageSources("kossel-about-overview-background.jpg");
 
 export default function About() {
   return (
@@ -47,8 +48,20 @@ export default function About() {
       </section>
 
       {/* Company Overview (Editorial Split) */}
-      <section id="overview" className="scroll-mt-28 py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+      <section id="overview" className="relative isolate overflow-hidden scroll-mt-28 py-16 md:py-24">
+        <div aria-hidden="true" className="rv-skip pointer-events-none absolute inset-0">
+          <ResponsiveImage
+            sources={overviewBackground}
+            alt=""
+            width={1024}
+            height={576}
+            loading="lazy"
+            sizes="100vw"
+            className="absolute inset-0 h-full w-full object-cover object-right"
+          />
+          <div className="absolute inset-0 bg-white/90 lg:bg-transparent lg:bg-gradient-to-r lg:from-white/95 lg:via-white/90 lg:to-white/60" />
+        </div>
+        <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             
             <div className="lg:col-span-7">

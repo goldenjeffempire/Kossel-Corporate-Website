@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "p-pIKI8TAdFg63iFDsFwb"
+uri = "file://attached_assets/generated_images/kossel-about-overview-background.jpg"
+type = "image"
+title = "About Page Overview Background"
+description = "Custom industrial engineering background, now used in the About page overview with a light overlay for readable text."
+logical_id = "4d1e2786-9a29-456b-b943-fa453045f5bf"
+content_hash = "sha256:1d316aa0a9db1f8ad6c0fc80a53eccf5854149a64fc60b18f88557831e137528"
+size = 155380
+mtime_ms = 1791112542612
+storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:e61117f1-6370-4d4c-b1b3-1292aafd172e/4d1e2786-9a29-456b-b943-fa453045f5bf/efba0f44-4fd9-41d4-9981-bd4dd703ddef"
+storage_version_token = "1791112585488055"
+content_type = "image/jpeg"
