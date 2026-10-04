@@ -1,0 +1,46 @@
+Upgrade the existing Kossel company website into a premium, modern, high-performance, production-ready corporate website.
+
+**First audit the entire existing codebase and preserve all working functionality, branding, content, and current technology stack. Then implement:**
+
+1. **VIDEO & HERO**
+
+* Create/integrate premium, professional Kossel-relevant videos.
+* Add an optimized cinematic video hero section to the homepage.
+* Add strategic video sections to the homepage, Services page, and Product pages.
+* Support responsive autoplay, muted loop, mobile compatibility, poster/fallback images, lazy loading, and proper controls.
+* Never allow videos to significantly slow page rendering.
+
+2. **ADVANCED SEO**
+
+* Implement comprehensive technical, international, and local SEO.
+* Optimize every page's title, meta description, headings, URLs, canonical tags, internal links, image/video SEO, Open Graph, robots.txt, and XML sitemap.
+* Add appropriate Schema.org structured data, including Organization/LocalBusiness, Product, Service, VideoObject, Breadcrumb, and other relevant schemas.
+* Optimize for Google, Bing, and other major search engines.
+* Implement location-based SEO without inventing business locations or information.
+* Make the site fully crawlable, indexable, accessible, and optimized for Core Web Vitals.
+* Prepare for Google Search Console and Analytics integration.
+
+3. **PERFORMANCE**
+
+* Optimize every image and video aggressively without noticeable quality loss.
+* Use WebP/AVIF, responsive images, compression, lazy loading, caching, efficient video encoding, preload priorities, and CDN-ready delivery.
+* Optimize LCP, CLS, INP, TTFB, mobile performance, and overall Lighthouse scores.
+* Ensure excellent performance on slow/mobile Nigerian and international networks.
+
+4. **RENDER PRODUCTION DEPLOYMENT**
+
+* Make the entire application production-ready for Render.
+* Configure correct build/start commands, environment variables, health checks, logging, error handling, graceful recovery, and production security.
+* Eliminate crashes, restart loops, broken routes, and deployment errors.
+* Configure reliable uptime/recovery and monitoring.
+* Do NOT use wasteful artificial ping/keep-alive loops as a substitute for proper hosting.
+* If the Render plan has sleep/availability limitations, clearly identify them and configure/recommend the correct production solution for genuine 24/7 availability.
+
+5. **FINAL QA**
+
+* Test every page, route, form, video, image, navigation element, mobile breakpoint, SEO implementation, structured-data validation, and production build.
+* Fix all errors, broken links, console errors, responsiveness issues, and performance bottlenecks.
+* Do not use fake data, placeholders, mock functionality, invented company information, or unfinished TODOs.
+* Do not remove existing functionality unless replacing it with a verified improvement.
+
+**FINAL RESULT:** Deliver a visually impressive, fast, SEO-dominant, locally and internationally discoverable, mobile-first, accessible, secure, and fully production-ready Kossel website that can be deployed reliably on Render and operated continuously 24/7.

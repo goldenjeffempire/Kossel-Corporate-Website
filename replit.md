@@ -4,7 +4,8 @@ A premium corporate website for Kossel LTD., showcasing its engineering, industr
 
 ## Run & Operate
 
-- **Start Kossel website** workflow — runs the website preview with `PORT=25235 BASE_PATH=/ pnpm --filter @workspace/kossel-website run dev`
+- **artifacts/kossel-website: web** workflow — runs the website preview with `pnpm --filter @workspace/kossel-website run dev`; the artifact supplies `PORT=25235` and `BASE_PATH=/`. Use Replit's Run control to start the website.
+- `pnpm install --frozen-lockfile` — install the imported workspace dependencies using the existing lockfile
 - `pnpm run typecheck` — full typecheck across all packages
 - `PORT=25235 BASE_PATH=/ pnpm --filter @workspace/kossel-website run build` — production website build
 - The current marketing website is static and does not require any secrets or a database to run.
@@ -12,7 +13,7 @@ A premium corporate website for Kossel LTD., showcasing its engineering, industr
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
+- pnpm workspaces, Node.js 20.20, TypeScript 5.9
 - Website: React 19, Vite 7, Tailwind CSS, Wouter, Framer Motion
 - Supporting workspace packages: Express 5 API, PostgreSQL + Drizzle ORM, Zod, and Orval code generation
 
