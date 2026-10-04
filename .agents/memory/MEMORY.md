@@ -2,3 +2,4 @@
 - [Video presentation](video-presentation.md) — the user requires all website videos to remain free of playback control badges.
 - [Homepage statistics](homepage-statistics.md) — the user requires the year, workforce and country-count statistics section to stay off the homepage.
 - [Responsive usability](responsive-usability.md) — wrap galleries; the user requires WhatsApp to float at the bottom-right on every screen size, never in the header.
+- [Sitemap submission checks](sitemap-submission.md) — inspect redirects before recommending sitemap URLs; Search Console submissions need the directly served XML address.
