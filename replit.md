@@ -10,6 +10,9 @@ A premium corporate website for Kossel LTD., showcasing its engineering, industr
 - `PORT=25235 BASE_PATH=/ pnpm --filter @workspace/kossel-website run build` — production website build
 - The current marketing website is static and does not require any secrets or a database to run.
 - Render deployment is defined in `render.yaml`; it builds `artifacts/kossel-website/dist/public` as a CDN-backed static site, so the frontend does not sleep.
+- Render should remain a static site for genuine continuous availability: static sites are CDN-served and do not need keep-alive pings or web-service health checks.
+- Set `VITE_SITE_URL` only when deploying to a domain other than the canonical `https://kosselgroup.com`; otherwise the built-in canonical, sitemap, and structured-data URLs are correct.
+- Optional production settings: `VITE_GOOGLE_SITE_VERIFICATION` adds the Search Console verification meta tag, and a valid `VITE_GA_MEASUREMENT_ID` (such as `G-...`) enables privacy-conscious Google Analytics initialization. Both remain inactive when unset.
 
 ## Stack
 

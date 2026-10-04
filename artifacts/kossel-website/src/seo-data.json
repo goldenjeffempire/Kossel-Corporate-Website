@@ -15,6 +15,13 @@
       "name": "Richard O. Akaighe",
       "jobTitle": "CEO & Founder"
     },
+    "telephone": "+2348030967258",
+    "address": {
+      "streetAddress": "Plot 320 DDPA Housing Estate",
+      "addressLocality": "Jeddo",
+      "addressRegion": "Delta State",
+      "addressCountry": "NG"
+    },
     "areaServed": [
       "Nigeria",
       "United Kingdom",
@@ -27,7 +34,13 @@
       "title": "Industrial Engineering & MRO Services | Kossel LTD.",
       "description": "Kossel LTD. provides industrial MRO, engineering, procurement, construction, pipeline, instrumentation and logistics support across Nigeria and beyond.",
       "imageAlt": "Kossel LTD. pipeline installation and industrial engineering operations",
-      "schemaType": "WebPage"
+      "schemaType": "WebPage",
+      "video": {
+        "name": "Industrial engineering for demanding operations",
+        "description": "Illustrative capability film showing professional pipeline and industrial engineering operations.",
+        "contentUrl": "/videos/kossel-pipeline-hero.mp4",
+        "thumbnailUrl": "/images/kossel-african-pipeline-team-1024.webp"
+      }
     },
     {
       "path": "/about",
@@ -42,6 +55,12 @@
       "description": "Explore Kossel's civil, mechanical and electrical engineering, P&ID design, pipeline installation, instrumentation, maintenance and marine logistics services.",
       "imageAlt": "Kossel instrumentation engineer delivering industrial services",
       "schemaType": "CollectionPage",
+      "video": {
+        "name": "Industrial engineering services",
+        "description": "Illustrative footage of professional engineering inspection in an industrial environment.",
+        "contentUrl": "/videos/kossel-engineering-services.mp4",
+        "thumbnailUrl": "/images/kossel-african-instrumentation-engineer-1024.webp"
+      },
       "serviceTypes": [
         "Industrial engineering",
         "Procurement and logistics",
@@ -58,6 +77,12 @@
       "description": "Source valves, flanges, pipes, fittings, fasteners, pumps, chemicals and industrial MRO components through Kossel's procurement division.",
       "imageAlt": "Industrial valves and components for Kossel procurement",
       "schemaType": "CollectionPage",
+      "video": {
+        "name": "Industrial MRO products",
+        "description": "Illustrative product film featuring precision industrial valves, flanges and fittings.",
+        "contentUrl": "/videos/kossel-mro-products.mp4",
+        "thumbnailUrl": "/images/valves-fittings-1024.webp"
+      },
       "productCategories": [
         "Pipes",
         "Butt weld pipe fittings",

@@ -11,6 +11,7 @@ import {
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { ContactFab } from '@/components/layout/ContactFab';
+import { SiteAnalytics } from '@/components/SiteAnalytics';
 
 // Pages
 import Home from '@/pages/Home';
@@ -67,6 +68,7 @@ function RoutedErrorBoundary({ children }: { children: ReactNode }) {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <SiteAnalytics />
       <WouterRouter base={import.meta.env.BASE_URL?.replace(/\/$/, '') || ''}>
         <Router />
       </WouterRouter>

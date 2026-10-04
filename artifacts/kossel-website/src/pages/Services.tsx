@@ -2,6 +2,7 @@ import { Settings, Truck, Anchor, Cog } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { imageSources } from "@/lib/images";
+import { CinematicVideo } from "@/components/CinematicVideo";
 
 const teamImg = imageSources("kossel-african-engineering-team.jpg");
 const pipelineImg = imageSources("kossel-african-pipeline-team.jpg");
@@ -53,6 +54,26 @@ export default function Services() {
           <p className="text-xl md:text-2xl text-white/80 max-w-3xl leading-relaxed font-light">
             Comprehensive engineering, procurement, and logistics solutions tailored to complex industrial operations.
           </p>
+        </div>
+      </section>
+
+      <section className="bg-primary py-20 text-white">
+        <div className="container mx-auto grid max-w-7xl items-center gap-10 px-4 md:px-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-accent">Capability in motion</p>
+            <h2 className="mb-6 text-4xl font-black uppercase tracking-tight md:text-5xl">Precision at every stage</h2>
+            <p className="max-w-xl text-lg leading-relaxed text-white/70">
+              From inspection and design through installation and maintenance, disciplined execution keeps complex industrial work aligned with project requirements.
+            </p>
+            <p className="mt-5 text-xs uppercase tracking-widest text-white/45">Illustrative footage</p>
+          </div>
+          <CinematicVideo
+            src={`${import.meta.env.BASE_URL}videos/kossel-engineering-services.mp4`}
+            poster={instrumentationImg.avif.large}
+            title="Illustrative engineering inspection"
+            description="Illustrative footage of engineering inspection at an industrial worksite."
+            className="aspect-video border border-white/15 shadow-2xl"
+          />
         </div>
       </section>
 

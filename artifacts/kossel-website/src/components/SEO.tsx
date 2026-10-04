@@ -9,6 +9,12 @@ type SeoRoute = {
   schemaType: string;
   serviceTypes?: string[];
   productCategories?: string[];
+  video?: {
+    name: string;
+    description: string;
+    contentUrl: string;
+    thumbnailUrl: string;
+  };
 };
 
 const SITE_URL = (
@@ -54,6 +60,19 @@ function upsertCanonical(href: string) {
     document.head.appendChild(element);
   }
 
+  element.href = href;
+}
+
+function upsertAlternate(hreflang: string, href: string) {
+  let element = document.head.querySelector<HTMLLinkElement>(
+    `link[rel="alternate"][hreflang="${hreflang}"]`,
+  );
+  if (!element) {
+    element = document.createElement("link");
+    element.rel = "alternate";
+    element.hreflang = hreflang;
+    document.head.appendChild(element);
+  }
   element.href = href;
 }
 
@@ -125,6 +144,28 @@ function createSchema(route: SeoRoute, canonicalUrl: string) {
       foundingDate: seoData.organization.foundingDate,
       founder: { "@id": founderId },
       areaServed: seoData.organization.areaServed,
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: seoData.organization.telephone,
+        email: seoData.organization.email,
+        contactType: "sales and project enquiries",
+        areaServed: seoData.organization.areaServed,
+        availableLanguage: ["English"],
+      },
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#nigeria-office`,
+      name: seoData.organization.legalName,
+      url: SITE_URL,
+      image: `${SITE_URL}${OG_IMAGE_PATH}`,
+      telephone: seoData.organization.telephone,
+      email: seoData.organization.email,
+      address: {
+        "@type": "PostalAddress",
+        ...seoData.organization.address,
+      },
+      parentOrganization: { "@id": organizationId },
     },
     {
       "@type": "Person",
@@ -186,6 +227,31 @@ function createSchema(route: SeoRoute, canonicalUrl: string) {
         name,
       })),
     });
+    graph.push(
+      ...route.productCategories.map((name, index) => ({
+        "@type": "Product",
+        "@id": `${canonicalUrl}#product-${index + 1}`,
+        name,
+        category: "Industrial MRO products",
+        description: `${name} supplied through Kossel's industrial procurement division to project specifications.`,
+        brand: { "@type": "Organization", "@id": organizationId },
+        url: canonicalUrl,
+      })),
+    );
+  }
+
+  if (route.video) {
+    graph.push({
+      "@type": "VideoObject",
+      "@id": `${canonicalUrl}#video`,
+      name: route.video.name,
+      description: route.video.description,
+      contentUrl: `${SITE_URL}${route.video.contentUrl}`,
+      thumbnailUrl: `${SITE_URL}${route.video.thumbnailUrl}`,
+      uploadDate: "2026-10-04",
+      duration: "PT4S",
+      inLanguage: seoData.language,
+    });
   }
 
   return {
@@ -225,6 +291,10 @@ export function SEO({
     upsertMeta("name", "application-name", seoData.siteName);
     upsertMeta("name", "theme-color", "#101A2B");
     upsertMeta("name", "referrer", "strict-origin-when-cross-origin");
+    const googleVerification = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION?.trim();
+    if (googleVerification) {
+      upsertMeta("name", "google-site-verification", googleVerification);
+    }
     upsertMeta("property", "og:title", title);
     upsertMeta("property", "og:description", description);
     upsertMeta("property", "og:url", canonicalUrl);
@@ -243,6 +313,8 @@ export function SEO({
     upsertMeta("name", "twitter:image:alt", imageAlt);
     if (indexable) {
       upsertCanonical(canonicalUrl);
+      upsertAlternate("en-NG", canonicalUrl);
+      upsertAlternate("x-default", canonicalUrl);
       upsertJsonLd(
         createSchema(
           { ...route, title, description, imageAlt },

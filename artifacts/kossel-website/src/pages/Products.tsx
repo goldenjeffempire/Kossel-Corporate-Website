@@ -2,6 +2,7 @@ import { Layers, Droplet, Nut, Shield, Zap } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { imageSources } from "@/lib/images";
+import { CinematicVideo } from "@/components/CinematicVideo";
 
 const productsImg = imageSources("kossel-industrial-products_2.jpg");
 const fittingsImg = imageSources("valves-fittings.jpg");
@@ -109,6 +110,26 @@ export default function Products() {
           <p className="text-xl md:text-2xl text-white/80 max-w-3xl leading-relaxed font-light">
             High-grade materials and components sourced globally to meet exact operational specifications.
           </p>
+        </div>
+      </section>
+
+      <section className="bg-primary py-20 text-white">
+        <div className="container mx-auto grid max-w-7xl items-center gap-10 px-4 md:px-8 lg:grid-cols-[1.2fr_0.8fr]">
+          <CinematicVideo
+            src={`${import.meta.env.BASE_URL}videos/kossel-mro-products.mp4`}
+            poster={fittingsImg.avif.large}
+            title="Illustrative industrial components"
+            description="Illustrative close-up footage of precision industrial valves, flanges and fittings."
+            className="aspect-video border border-white/15 shadow-2xl"
+          />
+          <div>
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-accent">Materials in focus</p>
+            <h2 className="mb-6 text-4xl font-black uppercase tracking-tight md:text-5xl">Built around exact specifications</h2>
+            <p className="text-lg leading-relaxed text-white/70">
+              Kossel supports industrial procurement across valves, flanges, pipes, fittings, fasteners, electrical components, pumps and chemicals.
+            </p>
+            <p className="mt-5 text-xs uppercase tracking-widest text-white/45">Illustrative footage</p>
+          </div>
         </div>
       </section>
 

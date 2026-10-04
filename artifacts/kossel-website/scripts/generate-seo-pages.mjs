@@ -73,7 +73,15 @@ function organizationSchema() {
     email: `mailto:${seoData.organization.email}`,
     foundingDate: seoData.organization.foundingDate,
     founder: { "@id": founderId },
-    areaServed: seoData.organization.areaServed
+    areaServed: seoData.organization.areaServed,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: seoData.organization.telephone,
+      email: seoData.organization.email,
+      contactType: "sales and project enquiries",
+      areaServed: seoData.organization.areaServed,
+      availableLanguage: ["English"]
+    }
   };
 }
 
@@ -123,6 +131,20 @@ function schemaForRoute(route) {
   const graph = [
     organizationSchema(),
     founderSchema(),
+    {
+      "@type": "LocalBusiness",
+      "@id": `${siteUrl}/#nigeria-office`,
+      name: seoData.organization.legalName,
+      url: siteUrl,
+      image: `${siteUrl}${seoData.defaultImage}`,
+      telephone: seoData.organization.telephone,
+      email: seoData.organization.email,
+      address: {
+        "@type": "PostalAddress",
+        ...seoData.organization.address
+      },
+      parentOrganization: { "@id": `${siteUrl}/#organization` }
+    },
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
@@ -179,6 +201,31 @@ function schemaForRoute(route) {
         name
       }))
     });
+    graph.push(
+      ...route.productCategories.map((name, index) => ({
+        "@type": "Product",
+        "@id": `${pageUrl}#product-${index + 1}`,
+        name,
+        category: "Industrial MRO products",
+        description: `${name} supplied through Kossel's industrial procurement division to project specifications.`,
+        brand: { "@type": "Organization", "@id": `${siteUrl}/#organization` },
+        url: pageUrl
+      }))
+    );
+  }
+
+  if (route.video) {
+    graph.push({
+      "@type": "VideoObject",
+      "@id": `${pageUrl}#video`,
+      name: route.video.name,
+      description: route.video.description,
+      contentUrl: `${siteUrl}${route.video.contentUrl}`,
+      thumbnailUrl: `${siteUrl}${route.video.thumbnailUrl}`,
+      uploadDate: "2026-10-04",
+      duration: "PT4S",
+      inLanguage: seoData.language
+    });
   }
 
   return {
@@ -215,7 +262,12 @@ function renderRoute(templateHtml, route) {
     `<meta name="application-name" content="${escapeHtml(seoData.siteName)}" />`,
     `<meta name="theme-color" content="#101A2B" />`,
     `<meta name="referrer" content="strict-origin-when-cross-origin" />`,
+    ...(process.env.VITE_GOOGLE_SITE_VERIFICATION
+      ? [`<meta name="google-site-verification" content="${escapeHtml(process.env.VITE_GOOGLE_SITE_VERIFICATION)}" />`]
+      : []),
     `<link rel="canonical" href="${pageUrl}" />`,
+    `<link rel="alternate" hreflang="en-NG" href="${pageUrl}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${pageUrl}" />`,
     `<meta property="og:title" content="${escapeHtml(route.title)}" />`,
     `<meta property="og:description" content="${escapeHtml(route.description)}" />`,
     `<meta property="og:url" content="${pageUrl}" />`,

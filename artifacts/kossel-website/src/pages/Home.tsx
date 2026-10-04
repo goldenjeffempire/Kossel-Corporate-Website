@@ -4,6 +4,7 @@ import { ArrowRight, Settings, Truck, ShieldCheck, Wrench } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { imageSources } from "@/lib/images";
+import { CinematicVideo } from "@/components/CinematicVideo";
 
 const teamImg = imageSources("kossel-african-engineering-team.jpg");
 const pipelineImg = imageSources("kossel-african-pipeline-team.jpg");
@@ -33,15 +34,14 @@ export default function Home() {
       {/* 1. Hero Section (Visual Transformation) */}
       <section className="relative h-[90vh] min-h-[700px] flex items-center justify-center overflow-hidden border-b-8 border-accent">
         <div className="absolute inset-0 bg-primary">
-          <ResponsiveImage
-            sources={pipelineImg}
-            alt="Kossel pipeline installation crew supporting an oilfield project"
-            width={1024}
-            height={1024}
-            loading="eager"
-            fetchPriority="high"
-            sizes="100vw"
-            className="h-full w-full scale-105 object-cover opacity-70"
+          <CinematicVideo
+            src={`${import.meta.env.BASE_URL}videos/kossel-pipeline-hero.mp4`}
+            poster={pipelineImg.avif.large}
+            title="Illustrative industrial pipeline operations"
+            description="Illustrative footage of a professional pipeline worksite."
+            priority
+            className="h-full w-full"
+            videoClassName="scale-105 opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-primary/10" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/55 to-primary/10" />
@@ -73,6 +73,13 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-primary py-5 text-white" aria-label="Video context">
+        <div className="container mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-white/65 md:px-8">
+          <span>Illustrative capability film</span>
+          <span className="hidden sm:inline">Muted · Looping · Reduced-motion aware</span>
         </div>
       </section>
 
