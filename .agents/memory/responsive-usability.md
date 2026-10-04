@@ -9,8 +9,8 @@ The user requires the entire website, including every page and interactive compo
 
 **How to apply:** Include narrow portrait, short landscape, tablet, and large-display layouts in future UI work. Prefer wrapping tabs and responsive image grids over horizontal-only navigation and galleries.
 
-Place quick-contact actions in normal page flow whenever the screen lacks enough spare space for floating buttons.
+WhatsApp must remain a floating icon at the bottom-right of the website on every screen size, including mobile. Other quick-contact actions can use normal page flow on smaller screens.
 
-**Why:** Browser verification showed fixed contact buttons obscuring hero copy, process descriptions, and inquiry fields on small phones. Preserving reachable content matters more than preserving floating placement.
+**Why:** The user explicitly corrected the header placement and requested the WhatsApp icon at the bottom-right.
 
-**How to apply:** Only float contact controls when there is room outside the readable content area; do not reintroduce small-screen fixed overlays over text or inputs.
+**How to apply:** Keep the WhatsApp icon fixed at the bottom-right with device safe-area spacing and a compact touch target. Do not move it into the header or normal page flow. Avoid stacking additional floating controls over small-screen content.

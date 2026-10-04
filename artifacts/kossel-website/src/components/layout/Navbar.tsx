@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { QuoteModal } from "@/components/QuoteModal";
+import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -125,6 +126,8 @@ export function Navbar() {
           </button>
         </div>
       </header>
+
+      <FloatingWhatsApp />
 
       {/* Mobile Menu */}
       {mobileMenuOpen && <nav

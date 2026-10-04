@@ -1,4 +1,4 @@
 - [Imported artifact preview routing](imported-artifact-preview-routing.md) — imported artifact manifests can route the proxy even when no artifact is registered in the workspace.
 - [Video presentation](video-presentation.md) — the user requires all website videos to remain free of playback control badges.
 - [Homepage statistics](homepage-statistics.md) — the user requires the year, workforce and country-count statistics section to stay off the homepage.
-- [Responsive usability](responsive-usability.md) — whole-site responsiveness includes wrapped galleries and contact controls that never obscure copy or form fields.
+- [Responsive usability](responsive-usability.md) — wrap galleries; the user requires WhatsApp to float at the bottom-right on every screen size, never in the header.
