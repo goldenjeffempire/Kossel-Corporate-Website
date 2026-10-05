@@ -245,6 +245,7 @@ function renderRoute(templateHtml, route) {
       return match && seoMetaKeys.has(match[1]) ? "" : tag;
     })
     .replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi, "")
+    .replace(/<link\b(?=[^>]*\brel=["']alternate["'])(?=[^>]*\bhreflang=["'](?:en-NG|x-default)["'])[^>]*>/gi, "")
     .replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "");
 
   if (route.path !== "/") {
@@ -298,6 +299,7 @@ function renderNotFound(templateHtml) {
       return match && seoMetaKeys.has(match[1]) ? "" : tag;
     })
     .replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi, "")
+    .replace(/<link\b(?=[^>]*\brel=["']alternate["'])(?=[^>]*\bhreflang=["'](?:en-NG|x-default)["'])[^>]*>/gi, "")
     .replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(
       /\s*<link\b(?=[^>]*\bdata-critical-hero=["']true["'])[^>]*>/gi,
