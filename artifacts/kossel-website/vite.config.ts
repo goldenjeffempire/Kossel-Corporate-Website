@@ -2,6 +2,7 @@ import path from 'path';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
+import seoData from './src/seo-data.json';
 
 import runtimeErrorOverlay from '@replit/vite-plugin-runtime-error-modal';
 
@@ -30,6 +31,25 @@ if (!basePath) {
 export default defineConfig({
   base: basePath,
   plugins: [
+    {
+      name: 'prerender-preview-routing',
+      configurePreviewServer(server) {
+        // Match Render's route rewrites instead of its default SPA fallback.
+        // Otherwise /services serves index.html despite services/index.html existing.
+        server.middlewares.use((request, _response, next) => {
+          const url = new URL(request.url || '/', 'http://preview.invalid');
+          const prefix = basePath.replace(/\/$/, '');
+          const pathname = url.pathname.startsWith(`${prefix}/`)
+            ? url.pathname.slice(prefix.length)
+            : url.pathname;
+          const normalized = pathname === '/' ? '/' : pathname.replace(/\/+$/, '');
+          if (seoData.routes.some((route) => route.path === normalized)) {
+            request.url = `${prefix}${normalized === '/' ? '' : normalized}/index.html${url.search}`;
+          }
+          next();
+        });
+      },
+    },
     react(),
     tailwindcss(),
     runtimeErrorOverlay(),

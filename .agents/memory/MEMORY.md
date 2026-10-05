@@ -3,3 +3,4 @@
 - [Homepage statistics](homepage-statistics.md) — the user requires the year, workforce and country-count statistics section to stay off the homepage.
 - [Responsive usability](responsive-usability.md) — wrap galleries; the user requires WhatsApp to float at the bottom-right on every screen size, never in the header.
 - [Sitemap submission checks](sitemap-submission.md) — inspect redirects before recommending sitemap URLs; Search Console submissions need the directly served XML address.
+- [Production preview parity](production-preview-parity.md) — SEO and hydration tests require preview routing that matches the real host, not an SPA fallback.

@@ -31,8 +31,10 @@
   "routes": [
     {
       "path": "/",
-      "title": "Industrial Engineering & MRO Services | Kossel LTD.",
-      "description": "Kossel LTD. provides industrial MRO, engineering, procurement, construction, pipeline, instrumentation and logistics support across Nigeria and beyond.",
+      "label": "Home",
+      "related": ["/services", "/products", "/projects", "/contact"],
+      "title": "Industrial Engineering & MRO Services in Nigeria | Kossel",
+      "description": "Kossel LTD. provides industrial engineering, MRO supplies, oilfield procurement, pipeline installation and logistics in Nigeria. Discuss your project with our team.",
       "imageAlt": "Kossel LTD. pipeline installation and industrial engineering operations",
       "schemaType": "WebPage",
       "video": {
@@ -44,15 +46,33 @@
     },
     {
       "path": "/about",
-      "title": "About Kossel & CEO Richard O. Akaighe | Nigeria",
+      "label": "About Kossel",
+      "related": ["/services", "/projects", "/hse-quality", "/contact"],
+      "title": "About Kossel LTD. | Nigerian Engineering & Oilfield Company",
       "description": "Meet Richard O. Akaighe, CEO and Founder of Kossel LTD., and learn about the Nigerian engineering and oilfield company serving operations across Africa.",
       "imageAlt": "Kossel engineering team supporting industrial operations",
       "schemaType": "AboutPage"
     },
     {
       "path": "/services",
-      "title": "Oilfield Engineering & Industrial Services | Kossel",
-      "description": "Explore Kossel's civil, mechanical and electrical engineering, P&ID design, pipeline installation, instrumentation, maintenance and marine logistics services.",
+      "label": "Engineering & oilfield services",
+      "related": ["/products", "/projects", "/hse-quality", "/contact"],
+      "title": "Oilfield Engineering & Procurement in Nigeria | Kossel",
+      "description": "Explore civil, mechanical and electrical engineering, oilfield procurement, pipeline installation, instrumentation and marine logistics from Kossel in Nigeria.",
+      "questions": [
+        {
+          "question": "What engineering and oilfield services does Kossel provide?",
+          "answer": "Kossel's capabilities include civil, mechanical and electrical engineering, procurement, pipeline and cable installation, instrumentation, industrial maintenance, inspection, haulage and marine logistics. The services page outlines how design, sourcing, mobilisation and delivery fit together."
+        },
+        {
+          "question": "Can engineering and procurement be coordinated for one project?",
+          "answer": "Kossel combines engineering, procurement and logistics support. Share your scope, technical specifications, project location and delivery requirements with the team so the appropriate services and materials can be reviewed together."
+        },
+        {
+          "question": "What information should I provide for a project enquiry?",
+          "answer": "Provide the project scope, drawings or specifications where available, required services or materials, quantities, site location and target schedule. Contact the team by telephone, email or WhatsApp to discuss the requirements and the next steps."
+        }
+      ],
       "imageAlt": "Kossel instrumentation engineer delivering industrial services",
       "schemaType": "CollectionPage",
       "video": {
@@ -73,8 +93,24 @@
     },
     {
       "path": "/products",
-      "title": "Industrial MRO Products & Oilfield Components | Kossel",
-      "description": "Source valves, flanges, pipes, fittings, fasteners, pumps, chemicals and industrial MRO components through Kossel's procurement division.",
+      "label": "Industrial MRO products",
+      "related": ["/services", "/projects", "/contact"],
+      "title": "Industrial MRO Products & Oilfield Supplies | Kossel",
+      "description": "Source industrial pipes, valves, flanges, fittings, fasteners, pumps and MRO supplies through Kossel's procurement division. Send your specifications for an enquiry.",
+      "questions": [
+        {
+          "question": "What does MRO mean in industrial procurement?",
+          "answer": "MRO stands for maintenance, repair and operations. It includes the equipment, replacement parts and consumables used to maintain industrial facilities and support ongoing operations."
+        },
+        {
+          "question": "Which industrial product categories can I enquire about?",
+          "answer": "Kossel lists pipes, butt weld and forged fittings, ANSI, API 6A and DIN flanges, valves, fasteners and sealing products, electronic components, pumps and chemicals. Availability and suitability need to be confirmed against your project specifications."
+        },
+        {
+          "question": "How do I request the right valves, flanges or pipe fittings?",
+          "answer": "Send the item description, quantity, dimensions, material grade, pressure rating, applicable standard, delivery location and required date. Include drawings or a bill of materials where available so the team can review the requirements."
+        }
+      ],
       "imageAlt": "Industrial valves and components for Kossel procurement",
       "schemaType": "CollectionPage",
       "video": {
@@ -96,21 +132,27 @@
     },
     {
       "path": "/projects",
-      "title": "Oilfield Engineering Project Track Record | Kossel",
+      "label": "Project experience",
+      "related": ["/services", "/products", "/hse-quality", "/contact"],
+      "title": "Engineering & Oilfield Project Experience | Kossel",
       "description": "Review Kossel's engineering, procurement, pipeline installation, maintenance and logistics track record for complex energy projects.",
       "imageAlt": "Kossel pipeline installation team delivering an energy project",
       "schemaType": "CollectionPage"
     },
     {
       "path": "/hse-quality",
-      "title": "HSE & Quality Management | Kossel Oilfield Services",
+      "label": "HSE & quality management",
+      "related": ["/about", "/services", "/projects", "/contact"],
+      "title": "HSE & Quality for Industrial Engineering | Kossel",
       "description": "See how Kossel integrates health, safety, environmental protection and quality management into engineering and oilfield operations.",
       "imageAlt": "Kossel HSE team reviewing safety and quality procedures",
       "schemaType": "WebPage"
     },
     {
       "path": "/contact",
-      "title": "Contact Kossel | Oilfield Engineering & Procurement",
+      "label": "Contact & project enquiries",
+      "related": ["/services", "/products", "/projects"],
+      "title": "Contact Kossel LTD. | Engineering & MRO in Nigeria",
       "description": "Contact Kossel LTD. in Nigeria, the UK or USA for industrial MRO, oilfield engineering, procurement and project support.",
       "imageAlt": "Kossel engineering team ready to support industrial projects",
       "schemaType": "ContactPage"

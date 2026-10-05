@@ -5,6 +5,7 @@ import { Menu, X, ChevronRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { QuoteModal } from "@/components/QuoteModal";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
+import { normalizeSeoPath } from "@/lib/seo-schema";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -18,6 +19,7 @@ const navLinks = [
 
 export function Navbar() {
   const [location] = useLocation();
+  const activePath = normalizeSeoPath(location);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -98,7 +100,7 @@ export function Navbar() {
                 <span
                   className={cn(
                     "px-3 py-3 text-sm font-semibold uppercase tracking-wider cursor-pointer transition-colors hover:text-accent relative after:absolute after:left-3 after:right-3 after:bottom-0.5 after:h-0.5 after:bg-accent after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100",
-                    location === link.href ? "text-accent after:scale-x-100" : "text-primary after:scale-x-0"
+                    activePath === link.href ? "text-accent after:scale-x-100" : "text-primary after:scale-x-0"
                   )}
                 >
                   {link.name}
@@ -146,7 +148,7 @@ export function Navbar() {
                 <span
                   className={cn(
                     "font-display text-2xl uppercase tracking-widest",
-                    location === link.href ? "text-accent" : "text-white"
+                  activePath === link.href ? "text-accent" : "text-white"
                   )}
                 >
                   {link.name}

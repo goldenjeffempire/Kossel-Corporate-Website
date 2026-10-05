@@ -1,4 +1,4 @@
-import { lazy, Suspense, type ReactNode } from 'react';
+import { lazy, Suspense, type ComponentType, type ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import NotFound from '@/pages/not-found';
@@ -14,6 +14,7 @@ import { ContactFab } from '@/components/layout/ContactFab';
 import { SiteAnalytics } from '@/components/SiteAnalytics';
 import { ScrollProgress } from '@/components/motion/ScrollProgress';
 import { PageEnhancer } from '@/components/motion/PageEnhancer';
+import { Breadcrumbs, SearchContent } from '@/components/SearchContent';
 
 // Pages
 import Home from '@/pages/Home';
@@ -26,27 +27,34 @@ const Contact = lazy(() => import('@/pages/Contact'));
 
 const queryClient = new QueryClient();
 
-function Router() {
+type AppProps = {
+  ssrPath?: string;
+  prerenderPages?: Record<string, ComponentType>;
+};
+
+function Router({ prerenderPages = {} }: AppProps) {
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <ScrollProgress />
       <PageEnhancer />
       <Navbar />
       <main className="flex-grow pt-[84px] md:pt-[92px]">
+        <Breadcrumbs />
         <RoutedErrorBoundary>
           <Suspense fallback={<RouteLoadingFallback />}>
             <Switch>
-              <Route path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/services" component={Services} />
-              <Route path="/products" component={Products} />
-              <Route path="/projects" component={Projects} />
-              <Route path="/hse-quality" component={HSEQuality} />
-              <Route path="/contact" component={Contact} />
+              <Route path="/" component={prerenderPages["/"] || Home} />
+              <Route path="/about" component={prerenderPages["/about"] || About} />
+              <Route path="/services" component={prerenderPages["/services"] || Services} />
+              <Route path="/products" component={prerenderPages["/products"] || Products} />
+              <Route path="/projects" component={prerenderPages["/projects"] || Projects} />
+              <Route path="/hse-quality" component={prerenderPages["/hse-quality"] || HSEQuality} />
+              <Route path="/contact" component={prerenderPages["/contact"] || Contact} />
               <Route component={NotFound} />
             </Switch>
           </Suspense>
         </RoutedErrorBoundary>
+        <SearchContent />
       </main>
       <ContactFab />
       <Footer />
@@ -69,12 +77,12 @@ function RoutedErrorBoundary({ children }: { children: ReactNode }) {
   return <ErrorBoundary resetKey={location}>{children}</ErrorBoundary>;
 }
 
-function App() {
+function App({ ssrPath, prerenderPages }: AppProps = {}) {
   return (
     <QueryClientProvider client={queryClient}>
       <SiteAnalytics />
-      <WouterRouter base={import.meta.env.BASE_URL?.replace(/\/$/, '') || ''}>
-        <Router />
+      <WouterRouter base={import.meta.env.BASE_URL?.replace(/\/$/, '') || ''} ssrPath={ssrPath}>
+        <Router prerenderPages={prerenderPages} />
       </WouterRouter>
     </QueryClientProvider>
   );

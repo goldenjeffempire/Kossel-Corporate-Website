@@ -67,7 +67,7 @@ export default function Home() {
               Demanding Operations
             </h1>
             <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed font-light">
-              Kossel LTD. delivers robust industrial MRO, procurement, and heavy engineering services to leading multinational facilities.
+              Kossel LTD. provides industrial engineering, MRO and oilfield procurement services in Nigeria, supporting energy and industrial operations with equipment, logistics and project delivery.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/services">
